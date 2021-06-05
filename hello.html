@@ -7,21 +7,20 @@
     <title>Document</title>
     <style>
     div {
-        color:blue;
+        color:rgb(204, 160, 37);
         font-size: 24px;
         text-align: center;
     }
     </style>
 </head>
 <body>
-    <div>Hello World!
-    
-<?php
-echo "My first PHP script! just insert inside html file";
-?>
+    <div>Hello World!<br>
+    <p id="demo"></p>
 
-        
-    </div>
-    
+<script>
+document.getElementById("demo").innerHTML = 33 + 6;
+</script>
+
+    </div>    
 </body>
 </html>
