@@ -48,15 +48,15 @@
 	<script src="../common/canvas_capture.js"></script>		
 	<script src="simple.js"></script>
 
-<style>
+	<style>
 	textarea#sigbase64 {
 	width: 600px;
 	height: 120px;
 	border: 3px solid #cccccc;
 	padding: 5px;
 	font-family: Tahoma, sans-serif;
-}
-</style>	
+	}
+	</style>	
   </head>
   <body>
       <h1>Signature SDK - Simple demo</h1>
@@ -75,7 +75,6 @@
 			<input type="text" id="wheresign"> <br>
 			<br>
 		  </li>
-
 	      <li>
 		      Load a previous captured Signature:
 			  <br><br><input type="file" id="myfile" name="myfile" onchange="javascript:loadFromFile();">
@@ -94,7 +93,7 @@
 		  <li>
 			This is base64text copy the content (after you sign) and paste it in Miniscope to verify the signature, the WHO, WHY (for Where you have to use Signature Scope)<br>
 
-			<br><textarea id="sigbase64" onfocus="setbg('#e5fff3');" onblur="setbg('white')"></textarea>
+			<br><textarea id="sigbase64" onfocus="setbg('#e5fff3');" onblur="setbg('white')"></textarea>&nbsp;&nbsp;<button onclick="copyToClipboard()">Copy text</button>
 				
 		  </li>
 	  </ul>
@@ -106,7 +105,22 @@
 <script >
 function setbg(color)
 {
-document.getElementById("sigbase64").style.background=color
+document.getElementById("sigbase64").style.background=color;
+};
+
+function copyToClipboard () {
+  /* Get the text field */
+  var copyText = document.getElementById("sigbase64");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied");
 }
 </script>
   </body>
