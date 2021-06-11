@@ -118,16 +118,16 @@ async function renderSignature(defaultSize) {
 	try {
 		const data = await mSigObj.getTextData(type);
 		document.getElementById("sigbase64").value = data;
-		log("The signature data as text is:\n"+data);
+		console.log("The signature data as text is:\n"+data);
 	} catch (e) {
-		log("Error ");
+		console.log("Error ");
 	}
 
 
 	/* const base64txtha = await mSigObj.renderBitmap(inkCanvas, 
 													renderWidth, 
 		   											renderHeight, 
-													"image/png", inkWidth, inkColor, "#ffffff", 10, 10, 0x1000|0x10000|0x40000|0x400000);
+													"image/png", inkWidth, inkColor, "#ffffff", 10, 10, 0x800|0x40000);
 
 	document.getElementById("sigbase64").value = base64txtha;
     */
