@@ -10,10 +10,18 @@
 
 var signatureForm;
 
-function captureFromSTU(sigObj) {
-	if (!signatureForm) {
-		signatureForm = new SignatureForm(sigObj);		
+function captureFromSTU(sigObj,whichsig) {
+
+	if (document.getElementById("customer").checked){
+		whichsig = 1;
+	} else {
+		whichsig = 2;
 	}
+
+	if (((!signatureForm )) || ((signatureForm && whichsig == 2))){
+		signatureForm = new SignatureForm(sigObj);
+	}		
+
 	signatureForm.connect();
 }
 
@@ -290,7 +298,7 @@ class SignatureForm {
 	this.mLoadingImageDiv.style.backgroundColor="white";
 	this.mLoadingImageDiv.style.width = "100%";
 	this.mLoadingImageDiv.style.height = "100%";
-	this.mLoadingImageDiv.value = '<div id="loadingDiv"><table><tr><td><img src="../common/stu_capture/loading.gif"></td><td>Loading the image, this could take a few seconds...</td></tr></div>';
+	this.mLoadingImageDiv.innerHTML = '<div id="loadingDiv"><table><tr><td><img src="../common/stu_capture/loading.gif"></td><td>Loading the image, this could take a few seconds...</td></tr></div>';
 	this.mFormDiv.appendChild(this.mLoadingImageDiv);	
   }
 	
