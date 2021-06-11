@@ -106,7 +106,7 @@ async function renderSignature(defaultSize) {
 	   								         renderHeight, 
 											 "image/png", inkWidth, inkColor, "#ffffff", 10, 10, 0x800|0x40000);
 	
-    	document.getElementById("sig_image1").src = image;	
+    	document.getElementById("sig_image").src = image;	
 	document.getElementById("sig_image2").src = image;
 	// *******************************************************
 	let type;
