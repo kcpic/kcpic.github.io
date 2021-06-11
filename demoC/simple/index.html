@@ -6,7 +6,9 @@
 	<title>Signature SDK - Simple demo</title>
 	<link rel="stylesheet" href="../common/stu_capture/stu_capture.css">
 	<link rel="stylesheet" href="../common/canvas_capture.css">
-	<script src="../common/will/libs/clipper.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">	
+	  <script src="../common/will/libs/clipper.js"></script>
 	<script src="../common/will/libs/md5.min.js"></script>
 	<script src="../common/will/libs/poly2tri.min.js"></script>
 	<script src="../common/will/libs/long.js"></script>
@@ -49,71 +51,119 @@
 	<script src="simple.js"></script>
 
 <style>
+	body {
+		font-family: 'Roboto', Airal, sans-serif;
+		font-size: 15px;
+		color: rgb(56, 60, 66);
+		line-height: 25px;
+	}
+	p {
+		font-size: 1.1em;
+	}
 	textarea#sigbase64 {
 	width: 600px;
 	height: 120px;
 	border: 3px solid #cccccc;
 	padding: 5px;
 	font-family: Tahoma, sans-serif;
+	}
+	.xcontent {
+		font-size: 1.1em;
+	}
+	.box {
+    display: flex;
+	column-gap: 5rem;
+    }	
+	.box_little {
+	display: flex;
+	column-gap: 1rem;
+	}
+.button {
+    border:none;
+    display:inline-block;
+    padding:8px 16px;
+    vertical-align:middle;
+    overflow:hidden;
+    text-decoration:none;
+	color: rgb(240, 240, 240);
+    background-color:#4CAF50;
+	font-size: 1.1em;
+    text-align:center;
+    cursor:pointer;
+    white-space:nowrap;
+	cursor: pointer;
+}
+.button:hover {
+   box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
 }
 </style>	
   </head>
   <body>
+	  <!-- <li style="display:none;">  will hide element opposite is  display:block;  -->
       <h1>Signature SDK - Simple demo</h1>
-	  <p>This is a pure javascript version of Signature SDK, using WebAssembly. This version it is supported by the major web browsers, you can see <a href="https://caniuse.com/?search=webassembly">here the list of compatible browsers</a>.</p>
-	  With the SDK you can:
+	  <p>This is pure javascript version of Signature SDK, using WebAssembly.<br>Supported by the recent version of major web browsers. <a href="https://caniuse.com/?search=webassembly" target="blank">for more detail click here</a></p>
+	  <div class="xcontent">
 	  <ul>
-		<li>
-			Enter the Who, Why and Where (required):<br><br>
-			<label for="whosign">Who:&nbsp;&nbsp;</label>
-			<input type="text" id="whosign"> <br>
-			
-			<label for="whysign">Why:&nbsp;&nbsp;</label>
-			<input type="text" id="whysign"><br>
-			
-			<label for="wheresign">Where: </label>
-			<input type="text" id="wheresign"> <br>
-			<br>
-		  </li>
-
 	      <li>
-		      Load a previous captured Signature:
+		      Load a previously captured Signature: (.FSS file or BASE64txt)
 			  <br><br><input type="file" id="myfile" name="myfile" onchange="javascript:loadFromFile();">
 		  </li>
 		  <br>
+		  <div style="display:none;">
 		  <li>
 		      Capture with STU device. This makes use of STU-SDK for javascript, and it is only supported on web browsers that supports WebHID. You can see <a href="https://caniuse.com/?search=webhid">here the list of compatible browsers</a>.
-			  <br><br><button id="capture_stu_device" onClick="captureFromSTU(mSigObj)">Capture with STU device</button>
+			  <br><br><button id="capture_stu_device" onClick="captureFromSTU(mSigObj,1)">Capture with STU device</button>
 		  </li>
 		  <br>
 		  <li>
 		      Capture with STU device. write to second canvas ... SignatureForm is class, look for "async connect()" 
-			  <br><br><button id="capture_stu_device2" onClick="captureFromSTU(mSigObj)">Capture with STU device2</button>
+			  <br><br>Flip Box: <input type="checkbox" id="myCheck" onclick="captureFromSTU(mSigObj,2)">
+			  <br><br><button id="capture_stu_device2" onClick="captureFromSTU(mSigObj,2)">Capture with STU device2</button>
 		  </li>
 		  <br>		  
 		  <li>
+			  
 		      Capture the signature using a device with integrated pen such as Wacom DTH/DTU devices, Android with built-in pen, Windows ink, etc.
 			  <br><br><button id="capture_generic_pen" onClick="captureFromCanvas(mSigObj)">Capture with generic Pen</button><br><br>
 		  </li>
-
+		  <br>
+		  </div>
 		  <li>
-			This is base64text copy the content (after you sign) and paste it in Miniscope to verify the signature, the WHO, WHY (for Where you have to use Signature Scope)<br>
-
-			<br><textarea id="sigbase64" onfocus="setbg('#e5fff3');" onblur="setbg('white')"></textarea>&nbsp;&nbsp;<button onclick="copyToClipboard()">Copy text</button>
-				
+			Enter the Who, Why and Where (info will be embedded in signature):<br><br>
+			<div class="box_little"> 
+			   <label for="whosign">Who:</label>
+			   <input type="text" id="whosign"> <br>
+			
+			   <label for="whysign">Why:</label>
+			   <input type="text" id="whysign"><br>
+			
+			   <label for="wheresign">Where:</label>
+			   <input type="text" id="wheresign"> <br>
+		    </div> <br>
+		  </li>
+		  <li style="list-style: none;">
+			   <input type="radio" name="Xsignee" id="customer">Customer&nbsp;&nbsp;
+			   <input type="radio" name="Xsignee" id="officer">Officer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    	
+			   <button class="button"; id="capture_stu_device3" onClick="captureFromSTU(mSigObj,0)">Capture with STU device</button><br>
 		  </li>
 	  </ul>
-	  <br>
-	  <fieldset id="signature_image" style="width:310px;height:210px;display: flex;justify-content: center;align-items: center;">
-	      <legend>Signature image:</legend>
+	  <div class="box">
+	    <fieldset id="signature_image" style="width:310px;height:210px;display: flex;justify-content: center;align-items: center;">
+	      <legend>Customer Signature:</legend>
 		  <img id="sig_image" style="display:block;margin: auto;">
-	  </fieldset>
-	  <br>
-	  <br>
-	  <fieldset id="signature_image2" style="width:310px;height:210px;display: flex;justify-content: center;align-items: center;">
-	      <legend>Signature Image2:</legend>
+	    </fieldset>
+	    <fieldset id="signature_image2" style="width:310px;height:210px;display: flex;justify-content: center;align-items: center;">
+	      <legend>Officer Signature:</legend>
 		  <img id="sig_image2" style="display:block;margin: auto;">
-	  </fieldset>
+	    </fieldset>
+      </div>
+	  <div>
+		This is base64text copy the content (after u sign) and paste in Miniscope to verify the signature, the WHO, WHY (for Where you have to use Signature Scope)<br>
+
+		<br><textarea id="sigbase64" onfocus="setbg('#e5fff3');" onblur="setbg('white')"></textarea>&nbsp;&nbsp;<button onclick="copyToClipboard()">Copy text</button>
+			
+	  </div>
 
 <script >
 function setbg(color)
@@ -135,6 +185,19 @@ function copyToClipboard () {
   /* Alert the copied text */
   alert("Copied");
 }
+
+var something = (function() {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+            document.getElementById("customer").checked = true;
+        }
+    };
+})();
+
 </script>
+ 
+
   </body>
 </html>
