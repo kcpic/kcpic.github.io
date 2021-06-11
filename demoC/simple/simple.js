@@ -104,13 +104,17 @@ async function renderSignature(defaultSize) {
 	const image = await mSigObj.renderBitmap(inkCanvas, 
 	                                         renderWidth, 
 	   								         renderHeight, 
-											 "image/png", inkWidth, inkColor, "#ffffff", 10, 10, 0x800|0x40000);
-	
-    	document.getElementById("sig_image").src = image;	
-	document.getElementById("sig_image2").src = image;
+											 "image/png", inkWidth, inkColor, "#ffffff", 10, 10, 0x800|0x10000|0x40000|0x400000);
+        if (document.getElementById("customer").checked) {
+			document.getElementById("sig_image").src = image;
+		} else if (document.getElementById("officer").checked) {
+			document.getElementById("sig_image2").src = image;
+		} else {
+			document.getElementById("sig_image").src = image;
+		}	
 	// *******************************************************
 	let type;
-    type = Module.TextFormat.BASE64;
+	type = Module.TextFormat.BASE64;
 	try {
 		const data = await mSigObj.getTextData(type);
 		document.getElementById("sigbase64").value = data;
@@ -123,7 +127,7 @@ async function renderSignature(defaultSize) {
 	/* const base64txtha = await mSigObj.renderBitmap(inkCanvas, 
 													renderWidth, 
 		   											renderHeight, 
-													"image/png", inkWidth, inkColor, "#ffffff", 10, 10, 0x2000|0x40000|0x400000);
+													"image/png", inkWidth, inkColor, "#ffffff", 10, 10, 0x1000|0x10000|0x40000|0x400000);
 
 	document.getElementById("sigbase64").value = base64txtha;
     */
