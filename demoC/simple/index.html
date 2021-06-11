@@ -87,6 +87,11 @@
 		  </li>
 		  <br>
 		  <li>
+		      Capture with STU device. write to second canvas ... SignatureForm is class, look for "async connect()" 
+			  <br><br><button id="capture_stu_device2" onClick="captureFromSTU(mSigObj)">Capture with STU device2</button>
+		  </li>
+		  <br>		  
+		  <li>
 		      Capture the signature using a device with integrated pen such as Wacom DTH/DTU devices, Android with built-in pen, Windows ink, etc.
 			  <br><br><button id="capture_generic_pen" onClick="captureFromCanvas(mSigObj)">Capture with generic Pen</button><br><br>
 		  </li>
@@ -103,6 +108,13 @@
 	      <legend>Signature image:</legend>
 		  <img id="sig_image" style="display:block;margin: auto;">
 	  </fieldset>
+	  <br>
+	  <br>
+	  <fieldset id="signature_image2" style="width:310px;height:210px;display: flex;justify-content: center;align-items: center;">
+	      <legend>Signature Image2:</legend>
+		  <img id="sig_image2" style="display:block;margin: auto;">
+	  </fieldset>
+
 <script >
 function setbg(color)
 {
