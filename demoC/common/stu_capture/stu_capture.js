@@ -18,7 +18,7 @@ function captureFromSTU(sigObj,whichsig) {
 		whichsig = 2;
 	}
 
-	if (((!signatureForm )) || ((signatureForm && whichsig == 2))){
+	if (!signatureForm ) {
 		signatureForm = new SignatureForm(sigObj);
 	}		
 
@@ -714,12 +714,16 @@ class SignatureForm {
   }
   
   async initInkController(canvas) {
-	const inkColor = "#ff0000";
+	const inkColor = "#0000ff";
 	let inkCanvas = await new InkCanvasRaster(canvas, canvas.width, canvas.height);
 	await BrushPalette.configure(inkCanvas.canvas.ctx);
+        let inkColor2use = inkColor;
 
+	if (document.getElementById("officer").checked) { 
+		inkColor2use = "#ff0000"; 
+	}
 	window.WILL = inkCanvas;
-	WILL.setColor(Color.fromHex(inkColor));
+	WILL.setColor(Color.fromHex(inkColor2use));
 	WILL.type = "raster";
 	await WILL.setTool("pen");
   }
