@@ -87,16 +87,18 @@ async function renderSignature(defaultSize) {
 	let scaleHeight = 200/height;
 	let scale = Math.min(scaleWidth, scaleHeight);
 				
-	const inkColor = "#ff0000";
+	const inkColor = "#0000ff";
 	const renderWidth = width * scale;
 	const renderHeight = height * scale;
+	let inkColor2use = inkColor;
 	
 	const canvas = new OffscreenCanvas(renderWidth, renderHeight);
 	let inkCanvas = await new InkCanvasRaster(canvas, canvas.width, canvas.height);
 	await BrushPalette.configure(inkCanvas.canvas.ctx);
-
+    	//  put code to set color for customer(blue) & officer (red) here
+    	if (document.getElementById("officer").checked) { inkColor2use = "#ff0000"; };
 	window.WILL = inkCanvas;
-	WILL.setColor(Color.fromHex(inkColor));
+	WILL.setColor(Color.fromHex(inkColor2use));
 	WILL.type = "raster";
 	await WILL.setTool("pen");			
 	
@@ -104,8 +106,11 @@ async function renderSignature(defaultSize) {
 	const image = await mSigObj.renderBitmap(inkCanvas, 
 	                                         renderWidth, 
 	   								         renderHeight, 
-											 "image/png", inkWidth, inkColor, "#ffffff", 10, 10, 0x800|0x10000|0x40000|0x400000);
-        if (document.getElementById("customer").checked) {
+											 "image/png", inkWidth, inkColor2use, "#ffffff", 10, 10, 0x800|0x40000);
+		// flags  0x800 retun bitmap asbinary data, 10000 background Transparent, 40000  Render RGB 256 image, 0x400000 Encode sig data in image
+		// THE LAST ELSE mean the very first time some one sign and forget to pick either customer NOR officer 
+		//  (nothing checked then put image in first signture box)						 
+        	if (document.getElementById("customer").checked) {
 			document.getElementById("sig_image").src = image;
 		} else if (document.getElementById("officer").checked) {
 			document.getElementById("sig_image2").src = image;
@@ -127,7 +132,7 @@ async function renderSignature(defaultSize) {
 	/* const base64txtha = await mSigObj.renderBitmap(inkCanvas, 
 													renderWidth, 
 		   											renderHeight, 
-													"image/png", inkWidth, inkColor, "#ffffff", 10, 10, 0x800|0x40000);
+													"image/png", inkWidth, inkColor2use, "#ffffff", 10, 10, 0x1000|0x10000|0x40000|0x400000);
 
 	document.getElementById("sigbase64").value = base64txtha;
     */
