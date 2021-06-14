@@ -47,11 +47,15 @@
 	
 	<script src="../common/canvas_capture.js"></script>		
 	<script src="simple.js"></script>
+	  <style>
+	   body {
+		   font-size: 0.7rem;
+		  }
+	  </style>
   </head>
   <body>
-      <h1>Signature SDK - Simple demo</h1>
-	  <p>This is a pure javascript version of Signature SDK, using WebAssembly. This version it is supported by the major web browsers, you can see <a href="https://caniuse.com/?search=webassembly">here the list of compatible browsers</a>.</p>
-	  With the SDK you can:
+      <h3>Signature SDK - Simple demo</h3>
+	  <p> javascript SDK for Signature.</p>
 	  <ul>
 	      <li>
 		      Load a previous captured Signature:
@@ -59,13 +63,12 @@
 		  </li>
 		  <br>
 		  <li>
-		      Capture with STU device. This makes use of STU-SDK for javascript, and it is only supported on web browsers that supports WebHID. You can see <a href="https://caniuse.com/?search=webhid">here the list of compatible browsers</a>.
 			  <br><br><button id="capture_stu_device" onClick="captureFromSTU(mSigObj)">Capture with STU device</button>
 		  </li>
-		  <br>
+		 
 		  <li>
-		      Capture the signature using a device with integrated pen such as Wacom DTH/DTU devices, Android with built-in pen, Windows ink, etc.
-			  <br><br><button id="capture_generic_pen" onClick="captureFromCanvas(mSigObj)">Capture with generic Pen</button>
+		      Capt signature with DTH/DTU devices, Android with built-in pen
+			 <br><button id="capture_generic_pen" onClick="captureFromCanvas(mSigObj)">Capture with generic Pen</button>
 		  </li>
 	  </ul>
 	  <fieldset id="signature_image" style="width:310px;height:210px;display flex;justify-content: center;align-items: center;">
@@ -75,7 +78,7 @@
 	  
 	  <div>
 	  <pre>
-	     Just add some more lines here to test the reason for unabe to scroll
+	     Just add some more lines here to test the reason for unabe to scroll scale it down to 0.7
 	     vertically on Samsung Note in landscape moe.
 
 	     Just add some more lines here to test the reason for unabe to scroll
