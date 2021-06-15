@@ -50,69 +50,111 @@
 	<script src="../common/canvas_capture.js"></script>		
 	<script src="simple.js"></script>
 
-<style>
-	body {
-		font-family: 'Roboto', Airal, sans-serif;
-		font-size: 15px;
-		color: rgb(56, 60, 66);
-		line-height: 25px;
-	}
-	p {
+	<style>
+		body {
+			font-family: 'Roboto', Airal, sans-serif;
+			font-size: 15px;
+			color: rgb(56, 60, 66);
+			line-height: 25px;
+		}
+	
+		p {
+			font-size: 1.1em;
+		}
+		textarea#sigbase64 {
+		width: 640px;
+		height: 120px;
+		border: 3px solid #cccccc;
+		padding: 5px;
+		font-family: Tahoma, sans-serif;
+		}
+		.xcontent {
+			font-size: 1.1em;
+		}
+		.box {
+		display: flex;
+		column-gap: 5rem;
+		}	
+		.box_little {
+		display: flex;
+		column-gap: 0.5rem;
+		border-radius: 5px;
+		background-color: #f2f2f2;
+		padding: 10px;
+		}
+	.button {
+		border:none;
+		display:inline-block;
+		padding:8px 16px;
+		border-radius: 5px;
+		vertical-align:middle;
+		overflow:hidden;
+		text-decoration:none;
+		color: rgb(240, 240, 240);
+		background-color:#4CAF50;
 		font-size: 1.1em;
+		text-align:center;
+		cursor:pointer;
+		white-space:nowrap;
 	}
-	textarea#sigbase64 {
-	width: 600px;
-	height: 120px;
-	border: 3px solid #cccccc;
-	padding: 5px;
-	font-family: Tahoma, sans-serif;
-	}
-	.xcontent {
+	.button-blue {
+		border:none;
+		display:inline-block;
+		padding:8px 16px;
+		border-radius: 5px;
+		vertical-align:middle;
+		overflow:hidden;
+		text-decoration:none;
+		color: rgb(240, 240, 240);
+		background-color:#3c79e9;
 		font-size: 1.1em;
+		text-align:center;
+		cursor:pointer;
+		white-space:nowrap;
 	}
-	.box {
-    display: flex;
-	column-gap: 5rem;
-    }	
-	.box_little {
-	display: flex;
-	column-gap: 1rem;
+	
+	.button:hover {
+	   box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
 	}
-.button {
-    border:none;
-    display:inline-block;
-    padding:8px 16px;
-    border-radius: 5px;
-    vertical-align:middle;
-    overflow:hidden;
-    text-decoration:none;
-    color: rgb(240, 240, 240);
-    background-color:#4CAF50;
-    font-size: 1.1em;
-    text-align:center;
-    cursor:pointer;
-    white-space:nowrap;
-    cursor: pointer;
-}
-.button:hover {
-   box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
-}
-</style>	
+	.button-blue:hover {
+	   box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
+	}
+	.horizontal-align {
+	  display: inline-block;
+	  vertical-align: middle;
+	  width: 730px;
+	  padding: 5px 5px;
+	  font-size: 1.1rem;
+	}
+	.item1 {
+	display: inline-block;
+	  width: 33%;
+	}
+	.item2 {
+	display: inline-block;
+	  width: 25%;
+	}
+	.item3 {
+	display: inline-block;
+	  width: 25%;
+	}
+
+	</style>	
   </head>
   <body>
 	  <!-- <li style="display:none;">  will hide element opposite is  display:block;  -->
       <h1>Signature SDK - Simple demo</h1>
-	  <p>This is pure javascript version of Signature SDK, using WebAssembly.<br>Supported by the recent version of major web browsers. <a href="https://caniuse.com/?search=webassembly" target="blank">for more detail click here</a></p>
+	  <p>Pure javascript Signature SDK, using WebAssembly.<br>Supported recent version of major web browsers. <a href="https://caniuse.com/?search=webassembly" target="blank">click here for detail</a></p>
 	  <div class="xcontent">
 	  <ul>
 	      <li>
-		      Load a previously captured Signature: (.FSS file or BASE64txt)
+		      Load previously captured Signature: (.FSS file or BASE64txt)
 			  <br><br><input type="file" id="myfile" name="myfile" onchange="javascript:loadFromFile();">
 		  </li>
 		  <br>
 		  <div style="display:none;">
 		  <li>
-		      Capture with STU device. This makes use of STU-SDK for javascript, and it is only supported on web browsers that supports WebHID. You can see <a href="https://caniuse.com/?search=webhid">here the list of compatible browsers</a>.
+		      Capture with STU device. work on web browsers with WebHID support.</a>.
 			  <br><br><button id="capture_stu_device" onClick="captureFromSTU(mSigObj,1)">Capture with STU device</button>
 		  </li>
 		  <br>
@@ -130,24 +172,43 @@
 		  <br>
 		  </div>
 		  <li>
-			Enter the Who, Why and Where (info will be embedded in signature):<br><br>
-			<div class="box_little"> 
-			   <label for="whosign">Who:</label>
-			   <input type="text" id="whosign"> <br>
-			
-			   <label for="whysign">Why:</label>
-			   <input type="text" id="whysign"><br>
-			
-			   <label for="wheresign">Where:</label>
-			   <input type="text" id="wheresign"> <br>
-		    </div> <br>
-		  </li>
-		  <li style="list-style: none;">
-			   <input type="radio" name="Xsignee" id="customer">Customer&nbsp;&nbsp;
-			   <input type="radio" name="Xsignee" id="officer">Officer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		    	
-			   <button class="button"; id="capture_stu_device3" onClick="captureFromSTU(mSigObj,0)">Capture with STU device</button><br>
-		  </li>
+			Signature Capture
+		   </li>
+			<li style="list-style: none;">
+		
+				<div class="box_little">
+					<span>
+						<label for="whosign">Who:</label>
+					<input type="text" id="whosign" placeholder="Your name.."><br></span>
+		
+					<span>
+						<label for="whysign">Why:</label>
+						<input type="text" id="whysign" placeholder="Reason for signing.."><br>
+					</span>
+		
+					<span>
+						<label for="wheresign">Where:</label>
+						<input type="text" id="wheresign" placeholder="Signing Location.."> <br>
+					</span>
+		
+				</div> <br>
+			</li>
+			<li style="list-style: none;">
+				<div class="horizontal-align">
+					<!-- <div class="three-items">  -->
+						<div class="item1">
+							<input type="radio" name="Xsignee" id="customer">Customer&nbsp;&nbsp;&nbsp;
+							<input type="radio" name="Xsignee" id="officer">Officer&nbsp;
+						</div>
+						<div class="item2">
+							<button class="button"; id="capture_stu_device3" onClick="captureFromSTU(mSigObj,1)">Capt. with STU</button><br>
+						</div>
+						<div class="item3">
+							<button class="button-blue"; id="capture_stu_device4" onClick="captureFromCanvas(mSigObj)">or Generic Pen</button><br>
+						</div>
+					<!--  </div>   -->
+				</div>
+			</li>
 	  </ul>
 	  <div class="box">
 	    <fieldset id="signature_image" style="width:310px;height:210px;display: flex;justify-content: center;align-items: center;">
@@ -160,10 +221,8 @@
 	    </fieldset>
       </div>
 	  <div>
-		<br>Base64text: Press "Copy text" button to copt to Clipboard, paste in Miniscope to verify the signature.<br>
-		  Embeded are the biometric data (including WHO, WHY etc.) <br>
-
-		<br><textarea id="sigbase64" onfocus="setbg('#e5fff3');" onblur="setbg('white')"></textarea>&nbsp;&nbsp;<button class="button"; onclick="copyToClipboard()">Copy text</button>
+		<br>Base64text: Press "Copy" button, paste to Miniscope to verify biometric data <br>
+		<br><textarea id="sigbase64" onfocus="setbg('#e5fff3');" onblur="setbg('white')"></textarea>&nbsp;&nbsp;<button class="button"; onclick="copyToClipboard()">Copy</button>
 			
 	  </div>
 
