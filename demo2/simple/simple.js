@@ -87,9 +87,8 @@ async function renderSignature(defaultSize) {
 	let scaleHeight = 200/height;
 	let scale = Math.min(scaleWidth, scaleHeight);
 	
-    console.log ("scale = " + scale);
-	scale = scale/2;
-	console.log ("New scale = " + scale);
+    	console.log ("scale = " + scale);
+	// scale = scale/2;
 
 	const inkColor = "#0000ff";
 	const renderWidth = width * scale;
