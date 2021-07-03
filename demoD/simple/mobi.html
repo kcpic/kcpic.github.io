@@ -64,7 +64,7 @@
 			font-size: 0.8rem;
 		}
 		textarea#sigbase64 {
-		width: 90vw;
+		width: 75vw;
 		height: 35px;
 		border: 3px solid #cccccc;
 		padding: 5px;
@@ -83,7 +83,7 @@
 		column-gap: 0.5rem;
 		border-radius: 5px;
 		background-color: #f2f2f2;
-		padding: 15px;
+		padding: 5px;
 		font-size: 0.8rem;
 		}
 
@@ -117,6 +117,21 @@
 		cursor:pointer;
 		white-space:nowrap;
 	}
+    .button-green2 {
+		border:none;
+		display:inline-block;
+		padding:8px 16px;
+		border-radius: 5px;
+		vertical-align:top;
+		overflow:hidden;
+		text-decoration:none;
+		color: rgb(240, 240, 240);
+		background-color:#4CAF50;
+		font-size: 0.8rem;
+		text-align:center;
+		cursor:pointer;
+		white-space:nowrap;
+	}		
 	.button-green:hover {
 	   box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
 	}
@@ -225,8 +240,8 @@
 	  <div>
 		<br>Base64text: Press "Copy" button, paste to Miniscope to verify biometric data <br>
 		<br><textarea id="sigbase64" onfocus="setbg('#e5fff3');" onblur="setbg('white')"></textarea>
-        </div>
-        <button class="button-green"; onclick="copyToClipboard()">Copy</button>
+                <button class="button-green2"; onclick="copyToClipboard()">Copy</button>
+	</div>
 
 <script >
 function setbg(color)
