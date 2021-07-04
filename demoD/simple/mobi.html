@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Signature SDK - Simple demo</title>
+	<title>Sign SDK - Simple demo</title>
 	<link rel="stylesheet" href="../common/stu_capture/stu_capture.css">
 	<link rel="stylesheet" href="../common/canvas_capture.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -64,7 +64,7 @@
 			font-size: 0.8rem;
 		}
 		textarea#sigbase64 {
-		width: 65vw;
+		width: 75vw;
 		height: 35px;
 		border: 3px solid #cccccc;
 		padding: 5px;
@@ -78,7 +78,7 @@
 		display: block;
 
 		}	
-		.box_little {
+	.box_little {
 		display: flex;
 		column-gap: 0.5rem;
 		border-radius: 5px;
@@ -120,7 +120,7 @@
     .button-green2 {
 		border:none;
 		display:inline-block;
-		padding:6px 14px;
+		padding:8px 16px;
 		border-radius: 5px;
 		vertical-align:top;
 		overflow:hidden;
@@ -131,7 +131,7 @@
 		text-align:center;
 		cursor:pointer;
 		white-space:nowrap;
-	}		
+	}	
 	.button-green:hover {
 	   box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
 	}
@@ -147,7 +147,7 @@
 	}
 	.item1 {
 	display: inline-block;
-	  width: 60%;
+	  width: 45%;
 	}
 	.btnStuPad {
 	display: inline-block;
@@ -238,11 +238,11 @@
 	    </fieldset>
       </div>
 	  <div>
-		<br>Base64txt: Copy/Paste to Miniscope to check data<br>
+		<br>Base64text: Copy/Paste to Miniscope to check data <br>
 		<textarea id="sigbase64" onfocus="setbg('#e5fff3');" onblur="setbg('white')"></textarea>
-                <button class="button-green2"; onclick="copyToClipboard()">Copy</button>
-	</div>
-
+        
+        <button class="button-green2"; onclick="copyToClipboard()">Copy</button>
+	  </div>
 <script >
 function setbg(color)
 {
