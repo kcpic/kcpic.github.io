@@ -135,5 +135,5 @@ async function renderSignature(defaultSize) {
 
 function captureFromCanvas(sigObj) {
 	let canvasCapture = new CanvasCapture(sigObj);
-	canvasCapture.startCapture(800, 600);
+	canvasCapture.startCapture(window.innerWidth * 0.8, window.innerWidth * 0.6);
 }
