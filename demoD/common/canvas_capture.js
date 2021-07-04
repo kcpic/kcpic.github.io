@@ -49,10 +49,18 @@ let CanvasCapture = function(sigObj) {
         this.mFormDiv = document.createElement('div');
         this.mFormDiv.id = "signatureWindow";
         this.mFormDiv.className = "active";
-        this.mFormDiv.style.top = (window.innerHeight / 4) - (height / 4) + "px";  //kckckc
-        this.mFormDiv.style.left = (window.innerWidth / 4) - (width / 4) + "px";   //kckckc
-        this.mFormDiv.style.width = (width * 0.5) + "px";  //kckckc
-        this.mFormDiv.style.height = (height * 0.5) + "px";  //kckckc
+        this.mFormDiv.style.top = ((window.innerHeight - height) / 6) + "px";  //kckckc
+        this.mFormDiv.style.left = (( window.innerWidth - width) / 2) + "px";   //kckckc
+		console.log("The value window.innerHeight: " + window.innerHeight);
+		console.log("The value of height: " + height);
+
+		console.log("The value window.innerWidth: " + window.innerWidth);
+		console.log("The value of width: " + width);
+		console.log("Style Top: " + this.mFormDiv.style.top);
+		console.log("Style left: " + this.mFormDiv.style.left);
+
+        this.mFormDiv.style.width = (width * 0.98) + "px";  //kckckc
+        this.mFormDiv.style.height = (height * 0.98) + "px";  //kckckc
         document.getElementsByTagName('body')[0].appendChild(this.mFormDiv);
 
         this.canvas = document.createElement("canvas");	
