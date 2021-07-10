@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Sign SDK - Simple demo</title>
+	<link rel="stylesheet" href="../common/stu_capture/stu_capture.css">
+	<link rel="stylesheet" href="../common/canvas_capture.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">	
+	  <script src="../common/will/libs/clipper.js"></script>
+	<script src="../common/will/libs/md5.min.js"></script>
+	<script src="../common/will/libs/poly2tri.min.js"></script>
+	<script src="../common/will/libs/long.js"></script>
+	<script src="../common/will/libs/protobuf.min.js"></script>
+    <script src="../common/will/libs/wacom-digital-ink-min.js"></script>	
+	<script type="text/javascript">
+		const {
+			fsx, Matrix,
+			InputDevice, InputListener,
+			SensorChannel, InkController,
+			Brush2D, BrushPrototype, ShapeFactory,
+			BrushGL, URIResolver,
+			Intersector, Selector,
+			PathPointContext, InkBuilder, Stroke,
+			InkModel, SpatialContext, InkCodec,
+			Color, Rect, BlendMode,
+			InkCanvas2D, StrokeRenderer2D,
+			InkCanvasGL, StrokeRendererGL, OffscreenCanvasGL, 
+			PointerData
+		} = DigitalInk;
+	</script>	
+	<script src="../common/will/InkCanvas.js"></script>
+	<script src="../common/will/InkCanvasRaster.js"></script>	
+	<script src="../common/will/ValueTransformer.js"></script>
+	<script src="../common/will/URIBuilder.js"></script>
+	<script src="../common/will/BrushPalette.js"></script>
+	<script src="../common/will/Config.js"></script>
+	<script src="../common/will/DataRepository.js"></script>
+	<script src="../common/will/DataModel.js"></script>
+		
+	<script src="../common/stu_capture/stu-sdk.min.js"></script> <!-- used to connect to STU devices -->
+    <script src="../common/signature_sdk.js"></script> <!-- signature SDK -->
+	<script src="../common/stu_capture/stu_capture.js"></script> <!-- used for capture data from STU devices -->
+	<script src="../common/stu_capture/stu_capture_encryption.js"></script> <!-- STU encryption functions -->
+	<script src="../common/stu_capture/BigInt.js"></script>
+	<script src="../common/stu_capture/md5.min.js"></script>
+	<script src="../common/stu_capture/sjcl.js"></script>
+	
+	<script src="../common/canvas_capture.js"></script>		
+	<script src="simpleY.js"></script>
+
+	<style>
+		body {
+			font-family: 'Roboto', Airal, sans-serif;
+			font-size: 16px;
+			color: rgb(56, 60, 66);
+            background-color:#f1f1f1;
+            margin: 1em auto;
+            width: 94%;
+			line-height: 1.1rem;
+		}
+        .container {
+            width: 96%;
+            margin: 0 auto;
+
+        }
+	
+		.displayornot {
+            font-size: 0.7rem;
+            display: none;
+		}
+		textarea#sigbase64 {
+		width: 70%;
+		height: 35px;
+		border: 3px solid #cccccc;
+		padding: 5px;
+		font-family: Tahoma, sans-serif;
+        font-size: 0.8rem;
+		}
+		.xcontent {
+			font-size: 0.8rem;
+            padding-top: 1px;
+		}
+	.box_little {
+		display: flex;
+		column-gap: 0.5rem;
+		border-radius: 5px;
+		background-color: #f2f2f2;
+		padding: 5px;
+		font-size: 0.8rem;
+		}
+
+	.button-blue {
+		border:none;
+		display:inline-block;
+		padding:8px 16px;
+		border-radius: 5px;
+		vertical-align:middle;
+		overflow:hidden;
+		text-decoration:none;
+		color: rgb(240, 240, 240);
+		background-color:#3c79e9;
+		font-size: 0.8rem;
+		text-align:center;
+		cursor:pointer;
+		white-space:nowrap;
+	}
+    .button-green {
+		border:none;
+		display:inline-block;
+		padding:8px 16px;
+		border-radius: 5px;
+		vertical-align:middle;
+		overflow:hidden;
+		text-decoration:none;
+		color: rgb(240, 240, 240);
+		background-color:#4CAF50;
+		font-size: 0.8rem;
+		text-align:center;
+		cursor:pointer;
+		white-space:nowrap;
+	}
+    .button-green2 {
+		border:none;
+		display:inline-block;
+		padding:8px 16px;
+		border-radius: 5px;
+		vertical-align:top;
+		overflow:hidden;
+		text-decoration:none;
+		color: rgb(240, 240, 240);
+		background-color:#4CAF50;
+		font-size: 0.8rem;
+		text-align:center;
+		cursor:pointer;
+		white-space:nowrap;
+	}	
+	.button-green:hover {
+	   box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
+	}
+	.button-blue:hover {
+	   box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
+	}
+	.horizontal-align {
+	  display: inline-block;
+	  vertical-align: middle;
+	  width: 100%;
+	  padding: 5px 5px;
+	  font-size: 0.8rem;
+	}
+	.item1 {
+	display: inline-block;
+	  width: 53%;
+	}
+	.btnStuPad {
+	display: inline-block;
+	  width: 24%;
+      height: 100%;
+	}
+	.btnAndroidTablet {
+	display: inline-block;
+	  width: 20%;
+	}
+    input[type=text], select {
+    width: 100%;
+    padding: 5px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+}
+
+    input[type=radio] {
+    padding: 5px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    }
+    h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content:flex-start;
+        width: 70%;
+    }
+
+    .flex-container > fieldset {
+        background-color: #f1f1f1;
+    }    
+
+   @media (min-width: 340px) and (max-width: 1000px) {
+    .item1 {
+	  width: 50%;
+	}
+    .btnStuPad {
+	  width: 12%;
+      height: 100%;
+      display: none;
+	}
+	.btnAndroidTablet {
+	  width: 10%;
+	}
+    .button-blue {
+      font-size: 1rem;
+      padding:6px 12px;
+
+    }
+    .button-green {
+      font-size: 1rem;
+      padding:6px 12px;
+
+    }
+    .button-green2 {
+      font-size: 1rem;
+      padding:6px 12px;
+
+    }
+    textarea#sigbase64 {
+		width: 96%;
+        margin: 0 auto;
+		height: 40px;
+        font-size: 0.7rem;
+	}
+   }
+   @media (min-width: 750px) and (max-width: 1000px) and (orientation: landscape) {  
+   .item1 {
+	  width: 25%;
+	}
+    .btnStuPad {
+	  width: 12%;
+      height: 100%;
+      display: none;
+	}
+	.btnAndroidTablet {
+	  width: 10%;
+	}
+    .button-blue {
+      font-size: 1rem;
+      padding:6px 12px;
+
+    }
+    .button-green {
+      font-size: 1rem;
+      padding:6px 12px;
+
+    }
+    .button-green2 {
+      font-size: 1rem;
+      padding:6px 12px;
+
+    }
+    textarea#sigbase64 {
+		width: 96%;
+        margin: 0 auto;
+		height: 40px;
+        font-size: 0.7rem;
+	}
+}
+
+
+@media (min-width: 1001px) {
+    body {
+    width: 60%;
+    }
+    .xcontent {
+			font-size: 1rem;
+            padding-top: 1px;
+            width: 80%;
+		}
+
+    .item1 {
+	  width: 45%;
+	}
+    .btnStuPad {
+	  width: 18%;
+      height: 100%;
+	}
+	.btnAndroidTablet {
+	  width: 16%;
+	}
+    .button-blue {
+      font-size: 1rem;
+      background-color:#0000FF;
+    }
+    .button-green {
+      font-size: 1rem;
+    }
+    .button-green2 {
+      font-size: 1rem;
+    }
+    textarea#sigbase64 {
+		width: 70%;
+		height: 45px;
+        font-size: 0.7rem;
+	}
+    h3 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+	.box_little {
+		display: flex;
+		column-gap: 0.5rem;
+		border-radius: 5px;
+		background-color: #f2f2f2;
+		padding: 5px;
+		font-size: 1rem;
+		}
+    .horizontal-align {
+	  display: inline-block;
+	  vertical-align: middle;
+	  width: 100%;
+	  padding: 5px 5px;
+	  font-size: 1rem;
+	}
+    .displayornot {
+        font-size: 1rem;
+        display: block;
+    }    
+
+}
+
+
+	</style>	
+  </head>
+  <!-- Version with Scroll buttons  Top and Bottom only  -->
+  <body>
+      <div class="container">
+	  <!-- <li style="display:none;">  will hide element opposite is  display:block;  -->
+      <h3>Signature SDK - Simple demo</h3>
+
+	  <p class="displayornot">Javascript Signature SDK: WebAssembly.<br>Recent ver.of major web browsers. <a href="https://caniuse.com/?search=webassembly" target="blank">More:</a></p>
+	  <div class="xcontent">
+
+				<div class="box_little">
+					<span>
+						<label for="whosign">Who:</label>
+					<input type="text" id="whosign" placeholder="Your name.."><br></span>
+		
+					<span>
+                        <label for="whysign">Why:</label>
+                        <select id="whysign" name="ReasonSigning">
+                          <option value="Approval">Approval</option>
+                          <option value="Consent">Consent</option>
+                          <option value="Confirm">Confirm</option>
+                          <option value="Acknowledge">Acknowledge</option>
+                          <option value="Acceptance">Acceptance</option>
+                        </select>
+					</span>
+                   
+					<span>
+                        <label for="wheresign">Where:</label>
+                        <select id="wheresign" name="SignLocation">
+                          <option value="Head Office - Tokyo">Head Office - Tokyo</option>
+                          <option value="Seoul Office">Seoul Office</option>
+                          <option value="Singapore Office">Singapore Office</option>
+                          <option value="Bangalore Office">Bangalore Office</option>
+                          <option value="Pattaya Office">Pattaya Office</option>
+                        </select>
+					</span>
+		
+				</div> 
+				<div class="horizontal-align" style="padding-bottom: 0.7rem;">
+						<div class="item1">
+							<input type="radio" name="Xsignee" id="customer"><label for="customer"> Customer&nbsp;&nbsp;</label>
+							<input type="radio" name="Xsignee" id="officer"><label for="officer"> Officer</label>
+						</div>
+						<div class="btnStuPad">
+							<button class="button-blue"; id="capture_stu_device3" onClick="captureFromSTU(mSigObj,1)">STU-540</button>
+						</div>
+						<div class="btnAndroidTablet">
+							<button class="button-green"; id="capture_stu_device4" onClick="captureFromCanvas(mSigObj)">Sign</button>
+						</div>
+				</div>
+                
+    <div class="flex-container">
+	    <fieldset id="signature_image" style="justify-content: center;align-items: center;">
+	      <legend id="siglegendC">Customer Sig.</legend>
+		  <img id="sig_image" style="margin: auto;">
+	    </fieldset> 
+	    <fieldset id="signature_image2" style="justify-content: center;align-items: center;">
+	      <legend id="siglegendO">Officer Sig.</legend>
+		  <img id="sig_image2" style="margin: auto;">
+	    </fieldset>
+    </div>
+
+	  <div style="margin-top: 0.7rem;">
+		Base64text: Copy/Paste to Miniscope to check data <br>
+		<textarea id="sigbase64" onfocus="setbg('#e5fff3');" onblur="setbg('white')"></textarea>
+        
+        <button class="button-green2"; onclick="copyToClipboard()">Copy</button>
+	  </div>
+<script >
+function setbg(color)
+{
+document.getElementById("sigbase64").style.background=color;
+};
+
+function copyToClipboard () {
+  /* Get the text field */
+  var copyText = document.getElementById("sigbase64");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied");
+}
+
+function changeLegend(whichLegend) {
+var legendX  = "";
+var who = document.getElementById("whosign").value;    //this is correct cannot use innerHTML
+var why = document.getElementById("whysign").value;
+//  var where = document.getElementById("wheresign").value;
+
+let legendText = " ";
+//legendText = legendText + who + " " + why + " " +  where;
+legendText = legendText + who + " : " + why;
+
+   document.getElementById(whichLegend).innerHTML = legendText;
+};
+
+var something = (function() {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+            document.getElementById("customer").checked = true;
+        }
+    };
+})();
+
+</script>
+ 
+</div>
+  </body>
+</html>
