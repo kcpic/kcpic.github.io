@@ -192,7 +192,10 @@
     .flex-container > fieldset {
         background-color: #f1f1f1;
     }    
-
+    .flex-containerA {
+	display: none;
+    }
+ 
    @media (min-width: 340px) and (max-width: 1000px) {
     .item1 {
 	  width: 50%;
@@ -226,7 +229,27 @@
 		height: 40px;
         font-size: 0.7rem;
 	}
+   .flex-containerA {
+	position: fixed;
+	display: flex;
+	bottom: 0;
+	right: 0;
+	}
+   .flex-containerA > div {
+	color: rgb(240, 240, 240);
+	background-color: #4CAF50;
+	padding: 10px 20px 10px 20px;
+	font-size: 1rem;
+	border-radius: 5px;
+	width:50px;
+	text-align: center;
+	}
+   a:link {text-decoration: none;}
+   a:visited {text-decoration: none;}
+   a:hover {text-decoration: none;}
+   a:active {text-decoration: none;}	   
    }
+   
    @media (min-width: 750px) and (max-width: 1000px) and (orientation: landscape) {  
    .item1 {
 	  width: 25%;
@@ -262,7 +285,6 @@
 	}
 }
 
-
 @media (min-width: 1001px) {
     body {
     width: 60%;
@@ -285,7 +307,7 @@
 	}
     .button-blue {
       font-size: 1rem;
-      background-color:#0000FF;
+      background-color:#3c79e9;
     }
     .button-green {
       font-size: 1rem;
@@ -321,17 +343,14 @@
         font-size: 1rem;
         display: block;
     }    
-
 }
-
-
-	</style>	
+  </style>	
   </head>
   <!-- Version with Scroll buttons  Top and Bottom only  -->
   <body>
       <div class="container">
 	  <!-- <li style="display:none;">  will hide element opposite is  display:block;  -->
-      <h3>Signature SDK - Simple demo</h3>
+      <h3 id="Top">Signature SDK - demo</h3>
 
 	  <p class="displayornot">Javascript Signature SDK: WebAssembly.<br>Recent ver.of major web browsers. <a href="https://caniuse.com/?search=webassembly" target="blank">More:</a></p>
 	  <div class="xcontent">
@@ -393,7 +412,16 @@
 		<textarea id="sigbase64" onfocus="setbg('#e5fff3');" onblur="setbg('white')"></textarea>
         
         <button class="button-green2"; onclick="copyToClipboard()">Copy</button>
+		<br>
+		<br>
+	<section id="Bottom"> </section>
 	  </div>
+
+	<div class="flex-containerA">
+		<div><a href="#Top"><span style="color: rgb(240, 240, 240);">Top</span></a></div>
+		<div><a href="#Bottom"><span style="color: rgb(240, 240, 240);">Bottom</span></a></div>
+	</div>	 
+</div>
 <script >
 function setbg(color)
 {
@@ -441,5 +469,5 @@ var something = (function() {
 </script>
  
 </div>
-  </body>
+</body>
 </html>
