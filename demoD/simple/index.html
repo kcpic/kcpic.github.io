@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Signature SDK - Simple demo</title>
+	<title>Sign SDK - Simple demo</title>
 	<link rel="stylesheet" href="../common/stu_capture/stu_capture.css">
 	<link rel="stylesheet" href="../common/canvas_capture.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -48,55 +48,49 @@
 	<script src="../common/stu_capture/sjcl.js"></script>
 	
 	<script src="../common/canvas_capture.js"></script>		
-	<script src="simple.js"></script>
+	<script src="simpleY.js"></script>
 
 	<style>
 		body {
 			font-family: 'Roboto', Airal, sans-serif;
-			font-size: 15px;
+			font-size: 16px;
 			color: rgb(56, 60, 66);
-			line-height: 25px;
+            background-color:#f1f1f1;
+            margin: 1em auto;
+            width: 94%;
+			line-height: 1.1rem;
 		}
+        .container {
+            width: 96%;
+            margin: 0 auto;
+
+        }
 	
-		p {
-			font-size: 1.1em;
+		.displayornot {
+            font-size: 0.7rem;
+            display: none;
 		}
 		textarea#sigbase64 {
-		width: 640px;
-		height: 120px;
+		width: 70%;
+		height: 35px;
 		border: 3px solid #cccccc;
 		padding: 5px;
 		font-family: Tahoma, sans-serif;
+        font-size: 0.8rem;
 		}
 		.xcontent {
-			font-size: 1.1em;
+			font-size: 0.8rem;
+            padding-top: 1px;
 		}
-		.box {
-		display: flex;
-		column-gap: 5rem;
-		}	
-		.box_little {
+	.box_little {
 		display: flex;
 		column-gap: 0.5rem;
 		border-radius: 5px;
 		background-color: #f2f2f2;
-		padding: 10px;
+		padding: 5px;
+		font-size: 0.8rem;
 		}
-	.button {
-		border:none;
-		display:inline-block;
-		padding:8px 16px;
-		border-radius: 5px;
-		vertical-align:middle;
-		overflow:hidden;
-		text-decoration:none;
-		color: rgb(240, 240, 240);
-		background-color:#4CAF50;
-		font-size: 1.1em;
-		text-align:center;
-		cursor:pointer;
-		white-space:nowrap;
-	}
+
 	.button-blue {
 		border:none;
 		display:inline-block;
@@ -107,13 +101,42 @@
 		text-decoration:none;
 		color: rgb(240, 240, 240);
 		background-color:#3c79e9;
-		font-size: 1.1em;
+		font-size: 0.8rem;
 		text-align:center;
 		cursor:pointer;
 		white-space:nowrap;
 	}
-	
-	.button:hover {
+    .button-green {
+		border:none;
+		display:inline-block;
+		padding:8px 16px;
+		border-radius: 5px;
+		vertical-align:middle;
+		overflow:hidden;
+		text-decoration:none;
+		color: rgb(240, 240, 240);
+		background-color:#4CAF50;
+		font-size: 0.8rem;
+		text-align:center;
+		cursor:pointer;
+		white-space:nowrap;
+	}
+    .button-green2 {
+		border:none;
+		display:inline-block;
+		padding:8px 16px;
+		border-radius: 5px;
+		vertical-align:top;
+		overflow:hidden;
+		text-decoration:none;
+		color: rgb(240, 240, 240);
+		background-color:#4CAF50;
+		font-size: 0.8rem;
+		text-align:center;
+		cursor:pointer;
+		white-space:nowrap;
+	}	
+	.button-green:hover {
 	   box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
 	}
 	.button-blue:hover {
@@ -122,110 +145,283 @@
 	.horizontal-align {
 	  display: inline-block;
 	  vertical-align: middle;
-	  width: 730px;
+	  width: 100%;
 	  padding: 5px 5px;
-	  font-size: 1.1rem;
+	  font-size: 0.8rem;
 	}
 	.item1 {
 	display: inline-block;
-	  width: 33%;
+	  width: 53%;
 	}
-	.item2 {
+	.btnStuPad {
 	display: inline-block;
-	  width: 25%;
+	  width: 24%;
+      height: 100%;
 	}
-	.item3 {
+	.btnAndroidTablet {
 	display: inline-block;
-	  width: 25%;
+	  width: 20%;
 	}
+    input[type=text], select {
+    width: 100%;
+    padding: 5px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+}
 
-	</style>	
+    input[type=radio] {
+    padding: 5px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    }
+    h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content:flex-start;
+        width: 70%;
+    }
+
+    .flex-container > fieldset {
+        background-color: #f1f1f1;
+    }    
+    .flex-containerA {
+	display: none;
+    }
+ 
+   @media (min-width: 340px) and (max-width: 1000px) {
+    .item1 {
+	  width: 50%;
+	}
+    .btnStuPad {
+	  width: 12%;
+      height: 100%;
+      display: none;
+	}
+	.btnAndroidTablet {
+	  width: 10%;
+	}
+    .button-blue {
+      font-size: 1rem;
+      padding:6px 12px;
+
+    }
+    .button-green {
+      font-size: 1rem;
+      padding:6px 12px;
+
+    }
+    .button-green2 {
+      font-size: 1rem;
+      padding:6px 12px;
+
+    }
+    textarea#sigbase64 {
+		width: 96%;
+        margin: 0 auto;
+		height: 40px;
+        font-size: 0.7rem;
+	}
+   .flex-containerA {
+	position: fixed;
+	display: flex;
+	bottom: 0;
+	right: 0;
+	}
+   .flex-containerA > div {
+	color: rgb(240, 240, 240);
+	background-color: #4CAF50;
+	padding: 10px 20px 10px 20px;
+	font-size: 1rem;
+	border-radius: 5px;
+	width:50px;
+	text-align: center;
+	}
+   a:link {text-decoration: none;}
+   a:visited {text-decoration: none;}
+   a:hover {text-decoration: none;}
+   a:active {text-decoration: none;}	   
+   }
+   
+   @media (min-width: 750px) and (max-width: 1000px) and (orientation: landscape) {  
+   .item1 {
+	  width: 25%;
+	}
+    .btnStuPad {
+	  width: 12%;
+      height: 100%;
+      display: none;
+	}
+	.btnAndroidTablet {
+	  width: 10%;
+	}
+    .button-blue {
+      font-size: 1rem;
+      padding:6px 12px;
+
+    }
+    .button-green {
+      font-size: 1rem;
+      padding:6px 12px;
+
+    }
+    .button-green2 {
+      font-size: 1rem;
+      padding:6px 12px;
+
+    }
+    textarea#sigbase64 {
+		width: 96%;
+        margin: 0 auto;
+		height: 40px;
+        font-size: 0.7rem;
+	}
+}
+
+@media (min-width: 1001px) {
+    body {
+    width: 60%;
+    }
+    .xcontent {
+			font-size: 1rem;
+            padding-top: 1px;
+            width: 80%;
+		}
+
+    .item1 {
+	  width: 45%;
+	}
+    .btnStuPad {
+	  width: 18%;
+      height: 100%;
+	}
+	.btnAndroidTablet {
+	  width: 16%;
+	}
+    .button-blue {
+      font-size: 1rem;
+      background-color:#3c79e9;
+    }
+    .button-green {
+      font-size: 1rem;
+    }
+    .button-green2 {
+      font-size: 1rem;
+    }
+    textarea#sigbase64 {
+		width: 70%;
+		height: 45px;
+        font-size: 0.7rem;
+	}
+    h3 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+	.box_little {
+		display: flex;
+		column-gap: 0.5rem;
+		border-radius: 5px;
+		background-color: #f2f2f2;
+		padding: 5px;
+		font-size: 1rem;
+		}
+    .horizontal-align {
+	  display: inline-block;
+	  vertical-align: middle;
+	  width: 100%;
+	  padding: 5px 5px;
+	  font-size: 1rem;
+	}
+    .displayornot {
+        font-size: 1rem;
+        display: block;
+    }    
+}
+  </style>	
   </head>
+  <!-- Version with Scroll buttons  Top and Bottom only  -->
   <body>
+      <div class="container">
 	  <!-- <li style="display:none;">  will hide element opposite is  display:block;  -->
-      <h1>Signature SDK - Simple demo</h1>
-	  <p>Pure javascript Signature SDK, using WebAssembly.<br>Supported recent version of major web browsers. <a href="https://caniuse.com/?search=webassembly" target="blank">click here for detail</a></p>
+      <h3 id="Top">Signature SDK - demo</h3>
+
+	  <p class="displayornot">Javascript Signature SDK: WebAssembly.<br>Recent ver.of major web browsers. <a href="https://caniuse.com/?search=webassembly" target="blank">More:</a></p>
 	  <div class="xcontent">
-	  <ul>
-	      <li>
-		      Load previously captured Signature: (.FSS file or BASE64txt)
-			  <br><br><input type="file" id="myfile" name="myfile" onchange="javascript:loadFromFile();">
-		  </li>
-		  <br>
-		  <div style="display:none;">
-		  <li>
-		      Capture with STU device. work on web browsers with WebHID support.</a>.
-			  <br><br><button id="capture_stu_device" onClick="captureFromSTU(mSigObj,1)">Capture with STU device</button>
-		  </li>
-		  <br>
-		  <li>
-		      Capture with STU device. write to second canvas ... SignatureForm is class, look for "async connect()" 
-			  <br><br>Flip Box: <input type="checkbox" id="myCheck" onclick="captureFromSTU(mSigObj,2)">
-			  <br><br><button id="capture_stu_device2" onClick="captureFromSTU(mSigObj,2)">Capture with STU device2</button>
-		  </li>
-		  <br>		  
-		  <li>
-			  
-		      Capture the signature using a device with integrated pen such as Wacom DTH/DTU devices, Android with built-in pen, Windows ink, etc.
-			  <br><br><button id="capture_generic_pen" onClick="captureFromCanvas(mSigObj)">Capture with generic Pen</button><br><br>
-		  </li>
-		  <br>
-		  </div>
-		  <li>
-			Signature Capture
-		   </li>
-			<li style="list-style: none;">
-		
+
 				<div class="box_little">
 					<span>
 						<label for="whosign">Who:</label>
 					<input type="text" id="whosign" placeholder="Your name.."><br></span>
 		
 					<span>
-						<label for="whysign">Why:</label>
-						<input type="text" id="whysign" placeholder="Reason for signing.."><br>
+                        <label for="whysign">Why:</label>
+                        <select id="whysign" name="ReasonSigning">
+                          <option value="Approval">Approval</option>
+                          <option value="Consent">Consent</option>
+                          <option value="Confirm">Confirm</option>
+                          <option value="Acknowledge">Acknowledge</option>
+                          <option value="Acceptance">Acceptance</option>
+                        </select>
 					</span>
-		
+                   
 					<span>
-						<label for="wheresign">Where:</label>
-						<input type="text" id="wheresign" placeholder="Signing Location.."> <br>
+                        <label for="wheresign">Where:</label>
+                        <select id="wheresign" name="SignLocation">
+                          <option value="Head Office - Tokyo">Head Office - Tokyo</option>
+                          <option value="Seoul Office">Seoul Office</option>
+                          <option value="Singapore Office">Singapore Office</option>
+                          <option value="Bangalore Office">Bangalore Office</option>
+                          <option value="Pattaya Office">Pattaya Office</option>
+                        </select>
 					</span>
 		
-				</div> <br>
-			</li>
-			<li style="list-style: none;">
-				<div class="horizontal-align">
-					<!-- <div class="three-items">  -->
+				</div> 
+				<div class="horizontal-align" style="padding-bottom: 0.7rem;">
 						<div class="item1">
-							<input type="radio" name="Xsignee" id="customer">Customer&nbsp;&nbsp;&nbsp;
-							<input type="radio" name="Xsignee" id="officer">Officer&nbsp;
+							<input type="radio" name="Xsignee" id="customer"><label for="customer"> Customer&nbsp;&nbsp;</label>
+							<input type="radio" name="Xsignee" id="officer"><label for="officer"> Officer</label>
 						</div>
-						<div class="item2">
-							<button class="button"; id="capture_stu_device3" onClick="captureFromSTU(mSigObj,1)">Capt. with STU</button><br>
+						<div class="btnStuPad">
+							<button class="button-blue"; id="capture_stu_device3" onClick="captureFromSTU(mSigObj,1)">STU-540</button>
 						</div>
-						<div class="item3">
-							<button class="button-blue"; id="capture_stu_device4" onClick="captureFromCanvas(mSigObj)">or Generic Pen</button><br>
+						<div class="btnAndroidTablet">
+							<button class="button-green"; id="capture_stu_device4" onClick="captureFromCanvas(mSigObj)">Sign</button>
 						</div>
-					<!--  </div>   -->
 				</div>
-			</li>
-	  </ul>
-	  <div class="box">
-	    <fieldset id="signature_image" style="width:310px;height:210px;display: flex;justify-content: center;align-items: center;">
-	      <legend>Customer Signature:</legend>
-		  <img id="sig_image" style="display:block;margin: auto;">
+                
+    <div class="flex-container">
+	    <fieldset id="signature_image" style="justify-content: center;align-items: center;">
+	      <legend id="siglegendC">Customer Sig.</legend>
+		  <img id="sig_image" style="margin: auto;">
+	    </fieldset> 
+	    <fieldset id="signature_image2" style="justify-content: center;align-items: center;">
+	      <legend id="siglegendO">Officer Sig.</legend>
+		  <img id="sig_image2" style="margin: auto;">
 	    </fieldset>
-	    <fieldset id="signature_image2" style="width:310px;height:210px;display: flex;justify-content: center;align-items: center;">
-	      <legend>Officer Signature:</legend>
-		  <img id="sig_image2" style="display:block;margin: auto;">
-	    </fieldset>
-      </div>
-	  <div>
-		<br>Base64text: Press "Copy" button, paste to Miniscope to verify biometric data <br>
-		<br><textarea id="sigbase64" onfocus="setbg('#e5fff3');" onblur="setbg('white')"></textarea>&nbsp;&nbsp;<button class="button"; onclick="copyToClipboard()">Copy</button>
-			
+    </div>
+
+	  <div style="margin-top: 0.7rem;">
+		Base64text: Copy/Paste to Miniscope to check data <br>
+		<textarea id="sigbase64" onfocus="setbg('#e5fff3');" onblur="setbg('white')"></textarea>
+        
+        <button class="button-green2"; onclick="copyToClipboard()">Copy</button>
+		<br>
+		<br>
+	<section id="Bottom"> </section>
 	  </div>
 
+	<div class="flex-containerA">
+		<div><a href="#Top"><span style="color: rgb(240, 240, 240);">Top</span></a></div>
+		<div><a href="#Bottom"><span style="color: rgb(240, 240, 240);">Bottom</span></a></div>
+	</div>	 
+</div>
 <script >
 function setbg(color)
 {
@@ -247,6 +443,19 @@ function copyToClipboard () {
   alert("Copied");
 }
 
+function changeLegend(whichLegend) {
+var legendX  = "";
+var who = document.getElementById("whosign").value;    //this is correct cannot use innerHTML
+var why = document.getElementById("whysign").value;
+//  var where = document.getElementById("wheresign").value;
+
+let legendText = " ";
+//legendText = legendText + who + " " + why + " " +  where;
+legendText = legendText + who + " : " + why;
+
+   document.getElementById(whichLegend).innerHTML = legendText;
+};
+
 var something = (function() {
     var executed = false;
     return function() {
@@ -259,6 +468,6 @@ var something = (function() {
 
 </script>
  
-
-  </body>
+</div>
+</body>
 </html>
