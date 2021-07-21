@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test TCPDF PHP file</title>
+</head>
+<body>
+
 <?php
 //============================================================+
 // File name   : example_001.php
@@ -104,3 +114,10 @@ $pdf->Output('example_001.pdf', 'I');
 //============================================================+
 // END OF FILE
 //============================================================+
+?>   
+    </body>
+        </html>
+    
+    
+ 
+    
