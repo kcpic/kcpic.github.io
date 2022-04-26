@@ -1,0 +1,45 @@
+.container {
+   padding: 2rem;
+}
+.cell1 {
+  background-color: #BDDAB3;
+  padding: 1rem;
+}
+.cell2 {
+  background-color: #d5e7f7;
+  padding: 1rem;
+}
+.cell3 {
+  background-color: #ffff;
+  padding: 1rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 10fr 1fr;
+  grid-gap: 1rem;
+}
+a {
+   text-decoration: none;
+   font-size: 1rem;
+   font-weight:400;
+   color: rgb(66, 66, 66); 
+   line-height: 2.2rem;
+ }
+ a:hover {
+   color: red;
+   background-color: transparent;
+   text-decoration: underline;
+}
+aside {
+   position:fixed;
+   height:100%;   
+}
+.tab1 {
+   margin-left: 2rem;  
+   font-size: 0.9rem;
+   font-style: italic;
+   line-height: 0.8rem;
+}
+h3 {
+   line-height: 0.5rem;
+}
