@@ -8,3 +8,4 @@ GSV SDK (General Signature Verification)
 Ink for Education SDK
 Multi Display SDK
 ```
+This readme.md was written using [GitHub Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#styling-text).
