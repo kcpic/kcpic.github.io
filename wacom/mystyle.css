@@ -5,6 +5,10 @@
   background-color: #BDDAB3;
   padding: 1rem;
 }
+.cell1 a {
+   font-size: 1.2rem;
+   font-weight: bold;
+}
 .cell2 {
   background-color: #d5e7f7;
   padding: 1rem;
@@ -36,7 +40,8 @@ a {
 }
 aside {
    position:fixed;
-   height:100%;   
+   height:100%; 
+  
 }
 .tab1 {
    margin-left: 2rem;  
