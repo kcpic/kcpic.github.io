@@ -1,12 +1,12 @@
    .container {
-   padding: 2rem;
+   padding: 1rem;
 }
 .cell1 {
   background-color: #BDDAB3;
   padding: 1rem;
 }
 .cell1 a {
-   font-size: 1.2rem;
+   font-size: 1rem;
    font-weight: bold;
 }
 .cell2 {
@@ -23,7 +23,7 @@ h4 {
 }
 .grid {
   display: grid;
-  grid-template-columns: 3fr 10fr 10px;
+  grid-template-columns: 4fr 12fr 5px;
   grid-gap: 1rem;
 }
 a {
