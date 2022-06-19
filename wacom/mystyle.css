@@ -23,7 +23,7 @@ h4 {
 }
 .grid {
   display: grid;
-  grid-template-columns: 4fr 12fr 5px;
+  grid-template-columns: 6fr 16fr 2px;
   grid-gap: 1rem;
 }
 a {
