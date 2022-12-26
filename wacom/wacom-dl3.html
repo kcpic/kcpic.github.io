@@ -5,23 +5,12 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Wacom DownloadSDK, Github, documents, FAQ, DataSheet, Utilities</title>
    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-   <link rel="stylesheet" href="mystyle.css">
-   <style>
-      body {
-         font-family: 'Lato', sans-serif;
-         font-weight: 400;
-         font-size: 0.9rem; /* 14px */
-         line-height: 1.313rem; /* 21px */
-         color: #000000;
-      }
-   </style>
+   <link rel="stylesheet" href="mystyle3.css">
 </head>
 <body>
-   <span id="wacom" ></span>
-   <div class="container grid">
-      <div class="cell1">
-         <aside>
-         <h4>V.Aug 23, 22</h4>
+   <div class="container">
+      <div class="col1">
+         <h3>2022-12-26</h3>
          <a href="#wacom">Home</a><br>
          <a href="#newrelease">New Released</a><br>
          <a href="#spprelated">SPP Related</a><br>
@@ -31,7 +20,7 @@
          <a href="#docspec">Documents</a><br>
          <a href="#sample">Sample code Github</a><br>
          <a href="#swtools">Util SW Tools</a><br>
-         <a class="frequentdl" href="#datasheet">Datasheet</a><br>
+         <a class="frequentdl" href="#datasheet">Datasheets</a><br>
          <a href="#accessories">Accessories</a><br>
          <a href="#pptslides">PPT Slides</a><br>
          <a class="frequentdl" href="#onlinedemo">Online Demo</a><br>
@@ -41,11 +30,10 @@
          <a href="#fixit">Fix it</a><br>
          <a href="#wapsales">WAP Sales</a><br>
          <a href="#thirdparty">Third Party</a><br>
-         <a href="#sppfaq">SPP FAQ</a><br><br><br>
+         <a href="#sppfaq">SPPs FAQ</a><br><br><br>
          
-         </aside>
       </div>
-      <div class="cell2">
+      <div class="col2">
          <h3 style="padding-top:0px;">Wacom</h3>
          <a href="https://www.wacom.com/en-us" target="_blank">Wacom Inc.</a><br> 
          <a href="https://www.wacom.com/en-us/support/product-support/drivers" target="_blank">Wacom Tablet Driver MacOS or Windows</a><br>
@@ -62,17 +50,17 @@
          <pre style="background-color:#F0F8FF;border-left: 12px solid #5d72f7;margin:0px;">
 <a class="tab1" href="https://github.com/Wacom-Developer/signature-sdk-js" target="_blank">Github JS SDK 1.2.2 Demo App source code (Not include webassembly (which is a separate download))</a>
 <a class="tab1" href="https://developer.wacom.com/en-us/developer-dashboard/downloads#for-signature" target="_blank">Web Assembly download <b>Wacom Ink SDK for signatures for JavaScript v1.2.2, 27 April 2022</b></a>
-<a class="tab1" style="color:red" href="https://gsdt.wacom.eu/download/Signature-SDK-Javascript.xml" target="_blank">GSDT Download Do not need github download</a>
-<a class="tab1" href="https://signature-sdk-demo-js.azurewebsites.net/demos/wizard/" target="_blank">Online JSSDK demo app (Complete, Simple, Wizard all available)</a>
-         </pre>
-         <span id="spprelated"></span><br>
-         
+<a class="tab1" href="https://gsdt.wacom.eu/download/Signature-SDK-Javascript.xml" target="_blank">GSDT Download JS SDK sample | Do not share</a>
+</pre>
+<span id="spprelated"></span><br>
+       
          <h3 style="padding-top:0px;"> Sign Pro PDF</h3>
          <pre style="background-color:#F0F8FF;border-left: 12px solid #5d72f7;margin:0px;">
 <a class="tab1" href="https://www.wacom.com/en-us/for-business/products/sign-pro-pdf-app" target="_blank">Sign Pro PDF <b>APP</b> download,</a> <a class="tab1" href="https://www.wacom.com/for-business/products/sign-pro-pdf-api" target="_blank"><b>SPP API</b>,</a><a class="tab1" href="https://www.wacom.com/en-us/for-business/products/sign-pro-pdf-plugin" target="_blank">SPP <b>Plug-in</b> (+ FAQ & Getting Started)</a>
 <a class="tab1" href="https://developer-docs.wacom.com/faqs/docs/q-app/app-signpro-v4-guides" target="_blank">Quick Started Guide &  Admin. Guide</a> <a class="tab1" href="https://developer-docs.wacom.com/faqs/docs/q-app/app-signpro-v4-faq" target="_blank">FAQs</a> 
-<a class="tab1" href="https://developer-docs.wacom.com/faqs/docs/q-app/app-signpro-v4-api" target="_blank">[API, API Spec., Demo App]</a>
-         </pre>
+<a class="tab1" href="https://developer-docs.wacom.com/faqs/docs/q-app/app-signpro-v4-api" target="_blank">[API, API Spec., Demo App]</a></pre>
+
+        
 
          <span id="quiksheet"></span><br>
          <h3 style="padding-top:0px;">Quick Sheet (PDF)</h3>
@@ -136,20 +124,22 @@
          <span id="datasheet"></span><br>
 
          <h3 style="padding-top:0px;">Datasheet Download and info page</h3>
-         <a class="tab1" href="https://confluence.wacom.com/display/GSDT/STU-540+and+541?preview=%2F125476066%2F125476068%2FWacom-for-Business-DataSheet-STU-540-541-EN-Global.pdf&searchId=WA3W1K3JF" target="_blank">STU-540</a><br>
-         <a class="tab1" href="https://confluence.wacom.com/display/WEB/Working+Content+Block+Glossary?preview=%2F119546578%2F119546637%2FWacom+for+Business+DataSheet+STU-430+EN-EU+20190627.pdf&searchId=V4Q3I0E2F" target="_blank">STU-430</a> <br>   
+         <a class="tab1" href="https://www.wacom.com/en-us/for-business/resources/documents#document%20type=Datasheet" target="_blank">Sign Pro PDF, STU Sign Pad & DT series Pen Display</a><br>
+         <a class="tab1" href="https://www.wacom.com/en-us/for-business/resources/documents#document%20type=Case%20Study" target="_blank">Case Study</a> <br>   
+         <a class="tab1" href="https://www.wacom.com/en-us/for-business/resources/documents#document%20type=Product%20Brochure&industries=Financial%20Services" target="_blank">Product Brochure</a> <br>   
          <a class="tab1" href="https://wcm-cdn.wacom.com/for-business/-/media/project/wacom/sites/bsu/products/hardware/pen-displays/dtu-1141b/2021-october/wacom-for-business-datasheet-dtu-1141b-en-global-20210910.pdf?rev=371fbab6e2a645a1bc9888235d67e030&hash=D64606DEFCA0C11B66DBEDBCC5786F0A" target="_blank">DTU-1141B</a><br>
          <a class="tab1" href="https://wcm-cdn.wacom.com/for-business/-/media/project/wacom/sites/bsu/products/hardware/pen-displays/dtk-1660e/2021-october/wacom-for-business-datasheet-dtk-1660e-en-global-20210910.pdf?rev=6b5b1511b77f44329f16e32dec4497d5&hash=0494A083AA1D4BDBD7895CF5BBA37E85" target="_blank">DTK-1660E</a><br>
-         <a class="tab1" href="https://confluence.wacom.com/display/GSDT/DTH-1152+Datasheet?preview=%2F125476313%2F125476314%2FWacom-for-Business-DataSheet-DTH-1152-EN-Global.pdf&searchId=F8D15KZE8" target="_blank">DTH-1152</a><br> 
-         <a class="tab1" href="https://confluence.wacom.com/display/WEB/Working+Content+Block+Glossary?preview=%2F119546578%2F119546638%2FWacom+for+Business+DataSheet+DTK-2451_DTH-2452+EN-EU+20190627.pdf&searchId=F8D15KZE8" target="_blank">DTK-2451, DTH-2452</a><br> 
-         <a class="tab1" href="https://wcm-cdn.wacom.com/for-business/-/media/project/wacom/sites/bsu/products/hardware/pen-displays/dtu-1031ax/2021-october/wacom-for-business-datasheet-dtu-1031ax-en-global-20210910.pdf?rev=fe560f2b94224e499737919180776134&hash=FADF643BAEE9224DEF1FA6F5BEB31FBF" target="_blank">DTU-1031AX</a><br> 
+         <a class="tab1" href="https://wcm-cdn.wacom.com/for-business/-/media/project/wacom/sites/bsu/products/hardware/pen-displays/dtu-1031ax/2021-october/wacom-for-business-datasheet-dtu-1Product Brochure031ax-en-global-20210910.pdf?rev=fe560f2b94224e499737919180776134&hash=FADF643BAEE9224DEF1FA6F5BEB31FBF" target="_blank">DTU-1031AX</a><br> 
          <a class="tab1" href="https://wcm-cdn.wacom.com/for-business/-/media/project/wacom/sites/bsu/products/software/sign-pro-pdf-api/datasheet-downloads-2022/wacom-for-business-datasheet-sign-pro-pdf-en-global-20220422.pdf?rev=e74acf5419a24d048737c6a4df4d76f4&hash=CC26CA9D4B9A9FE8432BB3DAE445B02E" target="_blank">Sign Pro PDF datasheet</a><br>
+
          <hr>
          <a class="tab1" href="https://confluence.wacom.com/display/BSUM/HW+PLM" target="_blank">HW PLM STU and DT series info Main page , below is more specific pages</a><br> 
          <a class="tab1" href="https://confluence.wacom.com/pages/viewpage.action?pageId=94903658" target="_blank">STU-430 info page | Shipment Spec | pallet info | </a><br> 
          <a class="tab1" href="https://confluence.wacom.com/pages/viewpage.action?pageId=94901381" target="_blank">STU-540 info page | Shipment Spec | pallet info | testutilities app can be found here too | </a><br> 
          <a class="tab1" href="https://confluence.wacom.com/pages/viewpage.action?pageId=94901334" target="_blank">DTU-1660E info page | Main selling point | Shipment Spec | pallet info | </a><br> 
          <a class="tab1" href="https://confluence.wacom.com/display/BSUM/Functions" target="_blank">Explanation of key functions/Technology |EMR|Encryption|Displaylink|Plug&Play|Kensington|slideshow|Pinpad|keypad|Citrix Compat|SignatureCapture| MORE</a><br> 
+         <hr>
+         <a class="tab1" href="https://wacomaad.sharepoint.com/sites/BSUDocumentRepository/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FBSUDocumentRepository%2FShared%20Documents%2FLegal%2FProfessional%20Services&viewid=5dc30da2%2D209e%2D47ae%2D9a1f%2De6e2cb757dad" target="_blank">BSU Document Repository ******  Many documents of interest</a><br> 
 
           
          <span id="accessories"></span><br>
@@ -161,14 +151,17 @@
 
          <h3 style="padding-top:0px;">Power Point Slides</h3>
          <a class="tab1" href="https://wacomaad.sharepoint.com/:p:/s/InkforEducation-RTS/ETuapH7sejlMokaIGJ63amEB5RwXbxyJaPJG8o3TqG4Uvw" target="_blank">Ink for Education Pitch Deck</a><br>
-         <a class="tab1" href="https://github.com/Wacom-Developer/sdk-for-signature-sigcaptx-windows" target="_blank">Signature SDK sample code SigCaptX- Windows web ***placeholder  ****need edit</a><br>
+         <a class="tab1" href="https://wacomaad.sharepoint.com/:p:/r/sites/BSUDocumentRepository/_layouts/15/Doc.aspx?sourcedoc=%7B9ECAD5FE-4F82-4190-9EF4-5B4756728D80%7D&file=20210903%20SW%20subscription%20renewals.pptx&action=edit&mobileredirect=true" target="_blank">SW subscription renewal 2021 Sep.</a><br>
+         <a class="tab1" href="https://wacomaad.sharepoint.com/:p:/r/sites/BSUDocumentRepository/_layouts/15/Doc.aspx?sourcedoc=%7B2FFC1059-5497-4ED4-A12C-C1470ED3A0FB%7D&file=WACOM%20SW%20Integration.pptx&action=edit&mobileredirect=true" target="_blank">Wacom SW integration</a><br>
          <a class="tab1" href="https://github.com/Wacom-Developer/sdk-for-signature-android" target="_blank">Signature SDK sample code - Androidplaceholder  ****need edit</a><br>
          <span id="onlinedemo"></span><br>
 
          <h3 style="padding-top:0px;">Online Demo</h3>
-         <a class="tab1" href="https://signature-sdk-demo-js.azurewebsites.net/demos/simple/" target="_blank">Simple Sig SDK JSSDK web as of June 19, 2022</a><br>
-         <a class="tab1" href="https://signature-sdk-demo-js.azurewebsites.net/demos/complete/" target="_blank">Complete Sig SDK JSSDK web as of June 19, 2022</a><br>
-         <a class="tab1" href="https://wcap22.com/jssdk/demos/complete_demo/sample.html" target="_blank">Simplified JSSDK demo, PDF Generator</a><br>
+         <a class="tab1" href="https://signature-sdk-demo-js.azurewebsites.net/demos/simple/" target="_blank">Simple Sig SDK JSSDK web, GSDT Beta Version, Do not share</a><br>
+         <a class="tab1" href="https://signature-sdk-demo-js.azurewebsites.net/demos/complete/" target="_blank">Complete Sig SDK JSSDK web, GSDT Beta Version, Do not share</a><br>
+         <a class="tab1" href="https://wcap22.com/jssdk/demos/complete_demo/sample.html" target="_blank">Simplified JSSDK demo, PDF Generator  <b>Shareable</b></a><br>
+         <a class="tab1" href="https://wcap22.com/JSSDK122PLAIN/demos" target="_blank">JSSDK demo 1.2.2 , build from GitHub source.  <b>Shareable</b></a><br>
+         
          <a class="tab1" href="https://will3-web-ink-demo.azurewebsites.net/" target="_blank">WILL3  Ink for Education web demo app</a><br>
          <a class="tab1" href="http://sign-pro-webdemo.westeurope.cloudapp.azure.com/crm.html" target="_blank">SPP API online demo Marco</a><br>
          <a class="tab1" href="http://sign-pro-.com/crm.html" target="_blank"> placeholder  ****need edit</a>
@@ -275,10 +268,7 @@
          <a class="tab1" href="https://go.microsoft.com/fwlink/p/?linkid=827918" target="_blank">Place Holder</a><br>
          <span id="hahaha2"></span><br>
 
-
       </div>
-      <div class="cell3">3</div>
-    </div>
 
 </body>
 </html>
