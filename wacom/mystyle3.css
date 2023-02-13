@@ -14,20 +14,20 @@ body {
   position: fixed;
   z-index: 1;
   padding: 1.2rem;
-  line-height: 2rem;
+  line-height: 1rem;
    overflow: hidden;
 }
 .col1 a {
    text-decoration: none;
-   font-size: 0.9rem;
-   font-weight: bold;
+   font-size: 0.6rem;
+   font-weight: lighter;
 }
 .col2 {
   background-color: #d5e7f7;
   padding: 0.7rem;
   font-size: 0.9rem;
   line-height: 1.5rem;
-  margin-left: 250px;
+  margin-left: 220px;
 }
 
 .col2 a {
