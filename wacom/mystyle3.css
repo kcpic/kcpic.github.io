@@ -15,7 +15,7 @@ body {
   z-index: 1;
   padding: 1.2rem;
   line-height: 1rem;
-  width: 142px;
+  width: 135px;
   overflow: hidden;
 }
 .col1 a {
@@ -28,7 +28,7 @@ body {
   padding: 0.7rem;
   font-size: 0.9rem;
   line-height: 1.5rem;
-  margin-left: 145px;
+  margin-left: 155px;
 }
 
 .col2 a {
