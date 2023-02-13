@@ -12,8 +12,11 @@ body {
 
 .col1 {
   background-color: #BDDAB5;
+  position: fixed;
+  z-index: 1;
   padding: 1.2rem;
   line-height: 2rem;
+   overflow: hidden;
 }
 .col1 a {
    text-decoration: none;
