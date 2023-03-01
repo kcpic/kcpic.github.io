@@ -29,6 +29,7 @@ body {
   font-size: 0.9rem;
   line-height: 1.5rem;
   margin-left: 170px;
+  overflow: hidden;
 }
 
 .col2 a {
