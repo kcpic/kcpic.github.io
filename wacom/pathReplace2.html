@@ -125,7 +125,7 @@ function kcReplaceSlash() {
   let copyText = document.getElementById("pathWindows").innerHTML;
   const copyContent = async () => {
     try {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(copyText);
       console.log('Content copied to clipboard');
       var tooltip = document.getElementById("myTooltip");
       tooltip.innerHTML = "Copied: " + copyText.value;
