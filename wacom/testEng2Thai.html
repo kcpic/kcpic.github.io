@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Convert Thai Text typed using US English keyboard by mistake</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            color:blue;
+            font-family: 'Sarabun', sans-serif;
+            margin: 10px 50px 20px 50px;
+        }
+        /* CSS code for styling the page */
+        h2 {
+            color: rgb(86, 86, 241);
+            text-align: left;
+        }
+        h3 {
+            color: rgb(114, 153, 237);
+            text-align: left;
+        }
+
+        #input, #output {
+            width: 300px;
+            height: 200px;
+            font-size: 20px;
+            margin-right: 10px;
+            background-color: rgb(254, 220, 251);
+            overflow-y: scroll;
+        }
+        #output {
+            background-color: lightcyan;
+        }
+        #convert, #save {
+            margin: 10px;
+            margin-right: 220px;
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Eng2Thai Text</h2>
+    <h3>When type Thai Text using US English keyboard</h3>
+    <textarea id="input" placeholder="Enter English text here"></textarea>
+    <textarea id="output" placeholder="Thai text will appear here" readonly></textarea>
+    <br>
+    <button id="convert">Convert</button>
+    <button id="save">Save</button>
+    <script>
+        // JavaScript code for handling the logic and interactivity of the page
+        // Define a map object that stores the key-value pairs for conversion
+        const map = {
+'`': '_',
+'1': 'ๅ',
+'2': '/',
+'3': '-',
+'4': 'ภ',
+'5': 'ถ',
+'6': 'ุ',
+'7': 'ึ',
+'8': 'ค',
+'9': 'ต',
+'0': 'จ',
+'-': 'ข',
+'=': 'ช',
+'q': 'ๆ',
+'w': 'ไ',
+'e': 'ำ',
+'r': 'พ',
+'t': 'ะ',
+'y': 'ั',
+'u': 'ี',
+'i': 'ร',
+'o': 'น',
+'p': 'ย',
+'[': 'บ',
+']': 'ล',
+'\\': 'ฃ',
+'a': 'ฟ',
+'s': 'ห',
+'d': 'ก',
+'f': 'ด',
+'g': 'เ',
+'h': '้',
+'j': '่',
+'k': 'า',
+'l': 'ส',
+';': 'ว',
+'\'': 'ง',
+'z': 'ผ',
+'x': 'ป',
+'c': 'แ',
+'v': 'อ',
+'b': 'ิ',
+'n': 'ื',
+'m': 'ท',
+',': 'ม',
+'.': 'ใ',
+'/': 'ฝ',
+'~': '%',
+'!': '+',
+'@': '๑',
+'#': '๒',
+'$': '๓',
+'%': '๔',
+'^': 'ู',
+'&': '฿',
+'*': '๕',
+'(': '๖',
+')': '๗',
+'_': '๘',
+'+': '๙',
+'Q': '๐',
+'W': '\"',
+'E': 'ฎ',
+'R': 'ฑ',
+'T': 'ธ',
+'Y': 'ํ',
+'U': '๊',
+'I': 'ณ',
+'O': 'ฯ',
+'P': 'ญ',
+'{': 'ฐ',
+'}': ',',
+'|': 'ฅ',
+'A': 'ฤ',
+'S': 'ฆ',
+'D': 'ฏ',
+'F': 'โ',
+'G': 'ฌ',
+'H': '็',
+'J': '๋',
+'K': 'ษ',
+'L': 'ศ',
+':': 'ซ',
+'"': '.',
+'Z': '(',
+'X': ')',
+'C': 'ฉ',
+'V': 'ฮ',
+'B': 'ฺ',
+'N': '์',
+'M': '?',
+'<': 'ฒ',
+'>': 'ฬ',
+'?': 'ฦ'
+        };
+
+        // Get the references to the HTML elements by their id
+        const input = document.getElementById("input");
+        const output = document.getElementById("output");
+        const convert = document.getElementById("convert");
+        const save = document.getElementById("save");
+
+        // Add an event listener to the convert button that runs a function when clicked
+        convert.addEventListener("click", function() {
+            // Get the input text value and initialize an empty output string
+            let inputText = input.value;
+            let outputText = "";
+            
+            // Loop through each character in the input text
+            for (let c of inputText) {
+                // If the character is in the map, append the corresponding value to the output string
+                if (map.hasOwnProperty(c)) {  
+                    outputText += map[c];
+                }
+                // Otherwise, append the character itself to the output string
+                else {
+                    outputText += c;
+                }
+            }
+
+            // Set the output text value to the output string
+            output.textContent = outputText;
+        });
+
+        // Add an event listener to the save button that runs a function when clicked
+        save.addEventListener("click", function() {
+            // Copy the output text value to the clipboard
+            navigator.clipboard.writeText(output.value);
+        });
+    </script>
+</body>
+</html>
