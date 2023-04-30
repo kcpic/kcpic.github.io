@@ -12,7 +12,7 @@
         body {
             color:blue;
             font-family: 'Sarabun', sans-serif;
-            margin: 10px 50px 20px 50px;
+            margin: 10px 20px 20px 50px;
         }
         /* CSS code for styling the page */
         h2 {
@@ -26,8 +26,9 @@
 
         #input, #output {
             width: 300px;
-            height: 200px;
+            height: 100px;
             font-size: 20px;
+            color:rgb(66,66,66);
             margin-right: 10px;
             background-color: rgb(254, 220, 251);
             overflow-y: scroll;
@@ -41,11 +42,16 @@
             padding: 10px;
             font-size: 20px;
         }
+        @media screen and (max-width: 830px) {
+            #convert, #save {
+               margin-right: 80px;
+            }
+         }
     </style>
 </head>
 <body>
     <h2>Eng2Thai Text</h2>
-    <h3>When type Thai Text using US English keyboard</h3>
+    <h3>Fix: English kb used to type Thai by accident</h3>
     <textarea id="input" placeholder="Enter English text here"></textarea>
     <textarea id="output" placeholder="Thai text will appear here" readonly></textarea>
     <br>
