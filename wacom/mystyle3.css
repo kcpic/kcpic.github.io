@@ -10,7 +10,7 @@ body {
 }
 
 .col1 {
-  background-color: #BDDAB5;
+  background-color: #f6f8fc;
   position: fixed;
   z-index: 1;
   padding: 1.2rem;
@@ -24,7 +24,8 @@ body {
    font-weight: lighter;
 }
 .col2 {
-  background-color: #d5e7f7;
+  background-color: #fff;
+  color: #333;
   padding: 0.7rem;
   font-size: 0.9rem;
   line-height: 1.5rem;
