@@ -4,15 +4,13 @@
  
 **Note**
 To create **hard line breaks**, Markdown requires **two or more spaces at the end of a line**.   
+[Markdown Tips](https://code.visualstudio.com/Docs/languages/markdown)  
   
 URL:  
 [newzealand wanderer](https://newzealandwanderer.com/best-places-to-visit-in-new-zealand/)  
 [newzealand dot com](https://www.newzealand.com/us/plan/business/fox-glacier-mountainview-bandb/)  
-
-
-Site to keep my pictures and journal.  
-created on June 5, 2021   HBD_Myle.html   
-
+  
+  
 **This is bold text**
 
 *This is italic*
