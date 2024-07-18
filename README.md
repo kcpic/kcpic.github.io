@@ -1,6 +1,11 @@
 # kcpic.github.io
 
-Site to keep my pictures and journal.
+*Another file is ReadmeNZ.md* 
+ 
+**Note**
+To create **hard line breaks**, Markdown requires **two or more spaces at the end of a line**.   
+
+Site to keep my pictures and journal.  
 created on June 5, 2021   HBD_Myle.html   
 
 **This is bold text**
