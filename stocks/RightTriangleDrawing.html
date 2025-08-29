@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right Triangle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 90%;
+        }
+        canvas {
+            background-color: #e2e8f0;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        .info-box {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #f7fafc;
+            border-radius: 0.5rem;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="container">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Right Triangle</h1>
+        <p class="text-lg text-gray-600 mb-6">A right triangle with a $53^\circ$ angle.</p>
+        
+        <canvas id="triangleCanvas" width="500" height="400" class="border border-gray-400"></canvas>
+
+        <div class="info-box">
+            <h2 class="text-xl font-semibold mb-2">Triangle Properties</h2>
+            <p id="angle-info" class="text-gray-700"></p>
+            <p id="side-info" class="text-gray-700"></p>
+            <p class="text-gray-500 text-sm mt-2">Note: This is a visual representation. The angle and side lengths are approximate for drawing purposes.</p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const canvas = document.getElementById('triangleCanvas');
+            const ctx = canvas.getContext('2d');
+            const angleInfo = document.getElementById('angle-info');
+            const sideInfo = document.getElementById('side-info');
+
+            const width = canvas.width;
+            const height = canvas.height;
+
+            const angleA = 53; // Given angle
+            const angleB = 90 - angleA; // Remaining angle
+            const angleC = 90; // Right angle
+
+            // Define the vertices
+            const P1 = { x: 50, y: height - 50 };
+            const P2 = { x: width - 50, y: height - 50 };
+
+            // Calculate the height of the triangle using tangent
+            const heightOfTriangle = (width - 100) * Math.tan(angleA * Math.PI / 180);
+            const P3 = { x: width - 50, y: height - 50 - heightOfTriangle };
+
+            // Function to draw the triangle and labels
+            function drawTriangle() {
+                // Clear canvas
+                ctx.clearRect(0, 0, width, height);
+                
+                // Draw the triangle
+                ctx.beginPath();
+                ctx.moveTo(P1.x, P1.y);
+                ctx.lineTo(P2.x, P2.y);
+                ctx.lineTo(P3.x, P3.y);
+                ctx.closePath();
+                ctx.strokeStyle = '#4b5563';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+                ctx.fillStyle = '#cbd5e1';
+                ctx.fill();
+
+                // Draw the right angle symbol
+                ctx.beginPath();
+                ctx.moveTo(P2.x - 15, P2.y);
+                ctx.lineTo(P2.x - 15, P2.y - 15);
+                ctx.lineTo(P2.x, P2.y - 15);
+                ctx.strokeStyle = '#334155';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Draw angle labels
+                ctx.fillStyle = '#334155';
+                ctx.font = '18px Inter';
+                ctx.fillText(`C`, P2.x - 30, P2.y + 25);
+                ctx.fillText(`${angleC}°`, P2.x - 20, P2.y - 20);
+
+                ctx.fillText(`A`, P1.x, P1.y + 25);
+                ctx.fillText(`${angleA}°`, P1.x + 35, P1.y - 25);
+                
+                ctx.fillText(`B`, P3.x - 20, P3.y - 10);
+                ctx.fillText(`${angleB}°`, P3.x - 30, P3.y + 25);
+
+                // Draw side labels
+                ctx.font = '14px Inter';
+                ctx.fillStyle = '#64748b';
+
+                // Side AC
+                ctx.fillText(`Hypotenuse`, (P1.x + P3.x) / 2 - 40, (P1.y + P3.y) / 2);
+
+                // Side BC
+                ctx.fillText(`Opposite`, P2.x + 10, (P2.y + P3.y) / 2);
+
+                // Side AB
+                ctx.fillText(`Adjacent`, (P1.x + P2.x) / 2, P1.y + 20);
+
+            }
+
+            // Display information
+            angleInfo.innerHTML = `The angles are: $53^\circ$, $37^\circ$, and $90^\circ$.`;
+            sideInfo.innerHTML = `The sides are labeled: Hypotenuse, Opposite, and Adjacent.`;
+
+            // Draw when the window is loaded
+            drawTriangle();
+        };
+    </script>
+</body>
+</html>
