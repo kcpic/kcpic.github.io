@@ -38,7 +38,7 @@ look at sample here: [Markdown Syntax](https://docs.github.com/en/get-started/wr
 
 #Heading 1
 
-<video src="https://www.youtube.com/shorts/LD9M5dtkK9Q?feature=share)" title="Video I point to youtube" autoplay loop controls muted></video>
+<video src="images/kctest.mp4" title="Video I point to youtube" autoplay loop controls muted></video>
 
 
 KC
