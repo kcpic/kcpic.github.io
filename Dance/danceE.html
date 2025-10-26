@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23ff0000%22></rect><path fill=%22%23fff%22 d=%22M59.59 47.63L85.25 79.92Q85.63 80.50 85.63 81.25Q85.63 82.02 85.01 82.63Q84.39 83.25 83.54 83.25L83.54 83.25L59.02 83.25Q56.84 83.25 55.60 81.73L55.60 81.73L39.07 61.30L39.07 80.69Q39.07 81.73 38.31 82.49Q37.55 83.25 36.51 83.25L36.51 83.25L16.94 83.25Q15.89 83.25 15.13 82.49Q14.38 81.73 14.38 80.69L14.38 80.69L14.38 19.31Q14.38 18.27 15.13 17.51Q15.89 16.75 16.94 16.75L16.94 16.75L36.51 16.75Q37.55 16.75 38.31 17.51Q39.07 18.27 39.07 19.31L39.07 19.31L39.07 37.17L54.09 18.36Q55.51 16.75 57.60 16.75L57.60 16.75L80.50 16.75Q81.35 16.75 81.97 17.37Q82.59 17.98 82.59 18.79Q82.59 19.60 82.11 20.17L82.11 20.17L59.59 47.63Z%22></path></svg>" />
+    <title>Links to Dance Class/Tutorial</title>
+    <!-- Gemini gen. with kc modifications   https://gemini.google.com/app/29a987985f5fda92   on 2025-10-26 -->
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for better scroll behavior on mobile */
+        @media (min-width: 768px) {
+            #nav-panel {
+                /* Ensures the nav panel stays on screen on desktop */
+                position: sticky;
+                top: 0;
+                height: 100vh;
+            }
+        }
+        /* Style the link container to allow space for content */
+        .content-card {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+    <!-- 
+        ======================================================================
+        Data Definition: URL Lists 
+        ======================================================================
+    -->
+    <script>
+        // Define all the data directly in a single JavaScript object
+        const URL_DATA = {
+            'ครูแหม่ม': [
+                { title: 'Electric Slide', url: 'https://youtu.be/9-bk5fzm_vY?list=RD9-bk5fzm_vY', description: 'Electric Slide Tutorial & Song' },
+                { title: 'Lets Twist Again', url: 'https://youtu.be/OvlsQprZPOQ?t=102', description: 'Tutorial & song' },
+                { title: 'STOMPING IT OUT', url: 'https://youtu.be/7K5_m8BPwAg?t=102', description: 'Tutorial & song ลิ้นกับฟัน' },
+                { title: 'BARTENDER STOMP', url: 'https://youtu.be/3fH1_G2t8tU?t=111', description: 'Tutorial & song' },
+                { title: 'STEP AND STOMP', url: 'https://youtu.be/XfKWvRtIL7U', description: 'Tutorial Only' },
+                { title: 'STEP AND STOMP with music', url: 'https://youtu.be/BsxhG9NMSvE', description: 'Dance with music' },
+                { title: 'COWBOY BOOGIE', url: 'https://youtu.be/w6bb0F7mRv4', description: 'Tutorial Only' },
+                { title: 'COWBOY BOOGIE with music', url: 'https://youtu.be/ro17Hzz4NRI', description: 'Dance with music' },
+                { title: 'COWBOY MADISON', url: 'https://youtu.be/J8qNabIgN1I?t=92', description: 'Tutorial & song' },
+                { title: 'I Wanna Marry You', url: 'https://youtu.be/rb3-Z2LRxMw?t=77', description: 'Tutorial & song' },
+                { title: 'ACHY BREAKY HEART', url: 'https://youtu.be/IJoIaYUrJdk?t=115', description: 'Tutorial & song' },
+                { title: 'Honey I Lied', url: 'https://youtu.be/SFPMOmm4kL8?t=122', description: 'Tutorial & song' },
+                { title: 'STRAY CAT STRUT', url: 'https://youtu.be/huoF29UCzsE?t=94', description: 'Tutorial & song' },
+                { title: 'AFTER FIVE STOMP', url: 'https://youtu.be/sSw5Q71yU0k', description: 'Tutorial Only' },
+                { title: 'AFTER FIVE STOMP with music', url: 'https://youtu.be/oq_V7LgI5Sc', description: 'Dance with music' },
+                { title: 'CHEYENNE', url: 'https://youtu.be/XCcDv4uEGo0?list=RDXCcDv4uEGo0&t=91', description: 'Tutorial & song' },
+                { title: 'LINDI SHUFFLE', url: 'https://youtu.be/C0RQwe3LaSc?t=124', description: 'Tutorial & song' },
+                { title: 'Lodi', url: 'https://youtu.be/Fpn0EfpsCvc?t=158', description: 'Tutorial & song' },
+                { title: 'รักคือฝันไป', url: 'https://youtu.be/uGcwGGZYzUs?t=220', description: 'Tutorial & song' },
+
+                { title: 'STRAY CAT STRUT', url: 'https://youtu.be/huoF29UCzsE?t=94', description: 'Tutorial & song' },
+            ],
+            'ครูหญิง': [
+                { title: 'Asynchronous JS (Promises)', url: 'https://placehold.co/async-promises', description: 'Understanding promises and async/await in modern JavaScript.' },
+                { title: 'CSS Grid Layout Deep Dive', url: 'https://placehold.co/css-grid-guide', description: 'Mastering two-dimensional layouts with CSS Grid.' },
+                { title: 'Web Accessibility (ARIA)', url: 'https://placehold.co/aria-guide', description: 'Making your content usable for everyone.' },
+                { title: 'Performance Optimization', url: 'https://placehold.co/performance', description: 'Tips and tricks for loading your pages quickly.' },
+            ],
+            'YT Dance Tutorial': [
+                { title: 'Tailwind CSS Documentation', url: 'https://tailwindcss.com/docs', description: 'Official documentation for the utility-first CSS framework.' },
+                { title: 'Color Palettes and Tools', url: 'https://placehold.co/color-palettes', description: 'A collection of tools for generating beautiful color schemes.' },
+                { title: 'Icon Library (Lucide)', url: 'https://lucide.dev/', description: 'High-quality, simple, and customizable open-source icons.' },
+                { title: 'Typography Best Practices', url: 'https://placehold.co/typography', description: 'Choosing and pairing fonts effectively for web.' },
+            ],
+            'More Youtube Dance': [
+                { title: 'Q&A Forum', url: 'https://placehold.co/forum', description: 'Get help and answers from the community.' },
+                { title: 'Bug Reporting', url: 'https://placehold.co/bug-report', description: 'Submit issues and track fixes for the project.' },
+                { title: 'Developer Meetups', url: 'https://placehold.co/meetups', description: 'Find local and virtual developer events.' },
+            ]
+        };
+        
+        // State variable to track the currently active category key
+        let activeCategory = 'ครูแหม่ม';
+
+        /**
+         * Renders the URL list into the content panel.
+         * @param {string} categoryKey - The key of the data to display.
+         */
+        function renderContent(categoryKey) {
+            const data = URL_DATA[categoryKey];
+            const contentPanel = document.getElementById('content-panel-content');
+            
+            if (!data || data.length === 0) {
+                contentPanel.innerHTML = '<p class="p-8 text-gray-500">No resources found for this category.</p>';
+                return;
+            }
+
+            // Generate HTML for the list of URLs, incorporating the right-aligned image
+            const html = data.map(item => `
+                <div class="content-card bg-white p-4 rounded-xl border border-gray-200 hover:border-indigo-400 transition-all duration-200">
+                    <div class="flex justify-between items-start gap-4">
+                        <!-- Text Content Area -->
+                        <div class="flex-grow min-w-0">
+                            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="text-xl font-semibold text-indigo-600 hover:text-indigo-800 transition-colors block">
+                                ${item.title}
+                            </a>
+                            <p class="mt-2 text-gray-600 text-sm">${item.description}</p>
+                            <span class="mt-3 inline-block text-xs text-indigo-400">
+                                ${item.url.replace('https://', '').replace('http://', '').substring(0, 30)}...
+                            </span>
+                        </div>
+                        
+                        <!-- Right-aligned Image (100x100) -->
+                        <div class="flex-shrink-0">
+                            <img 
+                                src="https://placehold.co/100x100/A0A0FF/000?text=Resource" 
+                                alt="Resource thumbnail" 
+                                class="w-[100px] h-[100px] rounded-lg object-cover"
+                            >
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            contentPanel.innerHTML = `
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6">Resources: ${categoryKey}</h2>
+                <!-- 
+                    MODIFICATION: Changed to a responsive grid: 
+                    1 column by default (mobile), 2 columns on medium screens (md:) 
+                -->
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    ${html}
+                </div>
+            `;
+            
+            // Update active state in navigation
+            updateNavActiveState(categoryKey);
+        }
+
+        /**
+         * Updates the visual active state of navigation links.
+         * @param {string} newActiveKey - The key of the newly active link.
+         */
+        function updateNavActiveState(newActiveKey) {
+            // Remove active classes from previously active element
+            const currentlyActive = document.querySelector('.nav-item.bg-indigo-600');
+            if (currentlyActive) {
+                currentlyActive.classList.remove('bg-indigo-600', 'text-white', 'shadow-lg');
+                currentlyActive.classList.add('text-gray-700', 'hover:bg-indigo-100');
+            }
+            
+            // Add active classes to the new element
+            const newActive = document.querySelector(`.nav-item[data-key="${newActiveKey}"]`);
+            if (newActive) {
+                newActive.classList.remove('text-gray-700', 'hover:bg-indigo-100');
+                newActive.classList.add('bg-indigo-600', 'text-white', 'shadow-lg');
+                activeCategory = newActiveKey; // Update state
+            }
+        }
+
+        /**
+         * Initializes the navigation panel structure and attaches event listeners.
+         */
+        function initializeApp() {
+            const navPanel = document.getElementById('nav-links');
+            const categories = Object.keys(URL_DATA);
+
+            // Generate navigation links
+            const navHtml = categories.map(key => `
+                <li 
+                    class="nav-item p-3 rounded-xl cursor-pointer transition-colors duration-150 text-gray-700 hover:bg-indigo-100 font-medium" 
+                    data-key="${key}"
+                >
+                    ${key}
+                </li>
+            `).join('');
+            
+            navPanel.innerHTML = navHtml;
+
+            // Attach click listeners to all generated items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.addEventListener('click', (event) => {
+                    const key = event.currentTarget.getAttribute('data-key');
+                    renderContent(key);
+                    
+                    // On mobile, scroll to the content area after selection
+                    if (window.innerWidth < 768) {
+                        document.getElementById('content-area').scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Load initial content
+            renderContent(activeCategory);
+        }
+
+        // Run initialization when the window loads
+        window.onload = initializeApp;
+    </script>
+    
+    <!-- 
+        ======================================================================
+        HTML Layout (Fully Responsive)
+        ======================================================================
+    -->
+    <div id="main-container" class="md:flex md:min-h-screen">
+        
+        <!-- Left Panel: Navigation (25% on desktop, full width on mobile) -->
+        <div id="nav-panel" class="bg-white p-6 md:p-8 md:w-1/4 w-full border-b md:border-r border-gray-200 shadow-xl md:shadow-none">
+            <h1 class="text-2xl font-extrabold text-indigo-700 mb-6 border-b pb-3">
+                <!--  Resource Navigator  -->
+                List of Contents
+            </h1>
+            <nav>
+                <ul id="nav-links" class="space-y-3">
+                    <!-- Navigation links are injected here by initializeApp() -->
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Panel: Dynamic Content (75% on desktop, stacks below on mobile) -->
+        <div id="content-area" class="md:w-3/4 w-full p-6 md:p-8 bg-gray-50">
+            <div id="content-panel-content" class="min-h-[60vh] md:min-h-full">
+                <!-- Content (URL lists) is injected here by renderContent() -->
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
