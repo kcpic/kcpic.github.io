@@ -25,6 +25,10 @@
         .min-h-screen-minus-header {
             min-height: calc(100vh - 100px); /* Adjust based on header height */
         }
+        .kc-text-blue-300 {
+            --tw-text-opacity: 1;
+            color: rgb(100 100 216 / var(--tw-text-opacity,  1));
+        }
     </style>
     <script>
         tailwind.config = {
@@ -82,7 +86,8 @@
     <main id="content-panel" class="p-6 lg:p-10 custom-scrollbar overflow-y-auto">
         <div id="content-card" class="bg-white rounded-xl shadow-2xl p-6 lg:p-8">
             <!-- Content will be injected here -->
-            <h2 id="content-title" class="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6"></h2>
+            <!--                  class="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6"></h2>    kc make change  -->
+            <h2 id="content-title" class="text-xl lg:text-2xl font-extrabold kc-text-blue-300 mb-6"></h2>
             <div id="content-body" class="prose max-w-none text-gray-700 leading-relaxed space-y-4">
                 <!-- Dynamic content goes here -->
             </div>
