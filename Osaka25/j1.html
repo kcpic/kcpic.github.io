@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Trip 2025 Tokyo, Osaka, Kyoto</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23ff6800%22></rect><path fill=%22%23fff%22 d=%22M59.59 47.63L85.25 79.92Q85.63 80.50 85.63 81.25Q85.63 82.02 85.01 82.63Q84.39 83.25 83.54 83.25L83.54 83.25L59.02 83.25Q56.84 83.25 55.60 81.73L55.60 81.73L39.07 61.30L39.07 80.69Q39.07 81.73 38.31 82.49Q37.55 83.25 36.51 83.25L36.51 83.25L16.94 83.25Q15.89 83.25 15.13 82.49Q14.38 81.73 14.38 80.69L14.38 80.69L14.38 19.31Q14.38 18.27 15.13 17.51Q15.89 16.75 16.94 16.75L16.94 16.75L36.51 16.75Q37.55 16.75 38.31 17.51Q39.07 18.27 39.07 19.31L39.07 19.31L39.07 37.17L54.09 18.36Q55.51 16.75 57.60 16.75L57.60 16.75L80.50 16.75Q81.35 16.75 81.97 17.37Q82.59 17.98 82.59 18.79Q82.59 19.60 82.11 20.17L82.11 20.17L59.59 47.63Z%22></path></svg>" />
+
+    <!-- Load Tailwind CSS CDN -->    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Roboto Mono font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom scrollbar for aesthetics */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px; /* Changed width to height for horizontal scrollbar */
+            width: 8px; /* Kept for vertical scrollbar in main content */
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1; /* slate-300 */
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: #94a3b8; /* slate-400 */
+        }
+        /* Ensure the main content uses the full remaining screen height */
+        .min-h-screen-minus-header {
+            min-height: calc(100vh - 100px); /* Adjust based on header height */
+        }
+        .kc-text-blue-300 {
+        --tw-text-opacity: 1;
+        color: rgb(100 100 216 / var(--tw-text-opacity,  1));
+        }
+        .kc-bg-purple-pastel {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 164 119 / var(--tw-bg-opacity,  1));
+        }        
+        .kc-text-white {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity,  1));
+        }
+
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans min-h-screen">
+
+    <!-- Top Horizontal Header and Navigation - NOW WITH LILAC PASTEL BACKGROUND -->
+    <header class="bg-fuchsia-100 shadow-md sticky top-0 z-10 border-b border-fuchsia-200">
+        <!-- Smaller Header Title -->
+        <div class="p-4 flex items-center justify-between" style="display: none";>  <!--kc hide this div -->
+            <h1 class="text-xl font-extrabold text-indigo-700 tracking-tight">Japan Trip 2025</h1>
+            <p class="text-base font-bold kc-text-white hidden sm:block">Tokyo Osaka Kyoto Nov 28 - Dec 2, 2025</p>
+        </div>
+
+        <!-- Horizontal Nav Menu -->
+        <nav id="horizontal-nav" class="flex overflow-x-auto whitespace-nowrap custom-scrollbar px-2 border-t border-fuchsia-200">
+            <!-- Navigation Items now use text-indigo-800 for better visibility -->
+            <button data-key="contact" class="nav-item flex items-center px-4 py-2 text-sm font-medium text-indigo-800 rounded-t-lg hover:bg-indigo-100 hover:text-indigo-900 transition duration-150 ease-in-out" role="tab" aria-selected="true">
+                <!-- Icon SVG for Contact -->
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.5l1 1.5l-2 2a10 10 0 005.5 5.5l2-2l1.5 1 1 3.5a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path></svg>
+                Contact
+            </button>
+            <button data-key="highlight" class="nav-item flex items-center px-4 py-2 text-sm font-medium text-indigo-800 rounded-t-lg hover:bg-indigo-100 hover:text-indigo-900 transition duration-150 ease-in-out" role="tab">
+                <!-- Icon SVG for Highlight -->
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.002 2.002L15 6M11 11l.999-.001L13 11M16 16l2.002 2.002L20 20M11 16l2.002 2.002L15 20M16 11l2.002 2.002L20 15M11 5l2.002 2.002L15 9"></path></svg>
+                Highlights
+            </button>
+            <button data-key="flight" class="nav-item flex items-center px-4 py-2 text-sm font-medium text-indigo-800 rounded-t-lg hover:bg-indigo-100 hover:text-indigo-900 transition duration-150 ease-in-out" role="tab">
+                <!-- Icon SVG for Flight -->
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                Flight
+            </button>
+            <div class="w-px bg-gray-300 h-6 self-center mx-2"></div> <!-- Separator adjusted -->
+            
+            <button data-key="day1" class="nav-item flex items-center px-4 py-2 text-sm font-bold kc-text-white rounded-t-lg hover:bg-indigo-50 hover:text-indigo-600 transition duration-150 ease-in-out" role="tab">Day 1</button>
+
+            <button data-key="day2" class="nav-item flex items-center px-4 py-2 text-sm font-bold kc-text-white rounded-t-lg hover:bg-indigo-50 hover:text-indigo-600 transition duration-150 ease-in-out" role="tab">Day 2</button>
+
+            <button data-key="day3" class="nav-item flex items-center px-4 py-2 text-sm font-bold kc-text-white rounded-t-lg hover:bg-indigo-50 hover:text-indigo-600 transition duration-150 ease-in-out" role="tab">Day 3</button>
+
+            <button data-key="day4" class="nav-item flex items-center px-4 py-2 text-sm font-bold kc-text-white rounded-t-lg hover:bg-indigo-50 hover:text-indigo-600 transition duration-150 ease-in-out" role="tab">Day 4</button>
+            
+            <button data-key="day5" class="nav-item flex items-center px-4 py-2 text-sm font-bold kc-text-white rounded-t-lg hover:bg-indigo-50 hover:text-indigo-600 transition duration-150 ease-in-out" role="tab">Day 5</button>
+        </nav>
+    </header>
+
+    <!-- Main Content Panel -->
+    <main id="content-panel" class="p-6 lg:p-10 custom-scrollbar overflow-y-auto">
+        <div id="content-card" class="bg-white rounded-xl shadow-2xl p-6 lg:p-8">
+            <!-- Content will be injected here -->
+            <h2 id="content-title" class="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6"></h2>
+            <div id="content-body" class="prose max-w-none text-gray-700 leading-relaxed space-y-4">
+                <!-- Dynamic content goes here -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- Data Definition ---
+        const tripData = {
+            contact: {
+                title: "Tour Company",
+                content: `
+                    <div class="mt-6 space-y-3">
+                        <div class="flex items-center">
+                            <span class="text-indigo-600 font-bold w-32">Company:</span>
+                            <span class="text-gray-800"> บ.แพลนเนท ฮอลลิเดย์ ทราเวิล จำกัด</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-indigo-600 font-bold w-32">Phone:</span>
+                            <span class="text-gray-800 font-mono">02-530-9899 | 091-939-4556, 091-778-4442, 085-567-5444</span> <!-- Monospace added here -->
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-indigo-600 font-bold w-32">Line Support:</span>
+                            <span class="text-gray-800">&nbsp; @planetholiday</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-indigo-600 font-bold w-32">Web:</span>
+                            <span class="text-gray-800 font-mono">www.planetholidaystravel.com</span> <!-- Monospace added here -->
+                        </div>
+                    </div>
+                    <p class="mt-6 text-sm italic text-gray-500 border-l-4 border-yellow-400 pl-3 py-1">Add more info here as needed.</p>
+                `
+            },
+            highlight: {
+                title: "Highlight: Tokyo, Osaka, Kyoto",
+                content: `
+                    <p class="text-lg font-semibold text-indigo-700 mb-4">Japan ในช่วงฤดูใบไม้ร่วง</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>⛰️ วิวใบไม้แดงที่โมมิจิไคโร ทะเลสาบคาวากูจิ โออิชิพาร์ค</li>
+                        <li>🏘️ เก็บแอปเปิ้ลสดๆ จากสวน</li>
+                        <li>📍 โครังเค ซากุระที่โอบาระ วัดอาซากุสะ</li>
+                        <li>🌄 วัดคิโยมิสึ วัดโทโซกู ยอดเขานิฮอนไดระ</li>
+                        <li>🙏 ช้อปปิ้งย่านซาคาเอะ ซินไซบาชิ ซินจูกุ</li>
+                    </ul>
+                    <p class="mt-6">พักฟูจิ ออนเซ็น 1 คืน ฮามานาโกะออนเซ็น 1 คืน กิฟุ 1 คืน คันไซ 1 คืน</p>
+                `
+            },
+            // FLIGHT DETAILS SECTION
+            flight: {
+                title: "Air Asia Flight Details",
+                content: `
+           
+                    <h3 class="text-lg font-bold kc-text-blue-300 mt-8 mb-4">Outbound Flight: ดอนเมือง (DMK) to Narita (NRT)</h3>
+                    <div class="mt-4 space-y-4 p-4 bg-indigo-50 rounded-xl border border-indigo-200 font-mono text-sm">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 text-gray-700">
+                            <div class="col-span-full font-sans text-base font-semibold text-indigo-700">Air Asia JXJ600</div>
+                            
+                            <div><span class="text-gray-500 w-20 inline-block font-sans">Route:</span> DMK &rarr; NRT</div>
+                            <div><span class="text-gray-500 w-20 inline-block font-sans">Departure:</span> Nov 27, 2025 @ 23:55 BKK</div>
+                            <div><span class="text-gray-500 w-20 inline-block font-sans">Arrival:</span> Nov 28, 2025 @ 08:00 JST</div>
+                            
+                            <div class="col-span-full text-xs font-sans italic pt-2">เวลาบิน 6 ชั่วโมง ** ทัวร์ไม่รวมอาหารบนเครื่องบิน | JST Time เร็วกว่าเวลากรุงเทพ 1 ชั่วโมง</div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-lg font-bold kc-text-blue-300 mt-8 mb-4">Return Flight: Osaka (KIX) to ดอนเมือง (DMK)</h3>
+                    <div class="mt-4 space-y-4 p-4 bg-indigo-50 rounded-xl border border-indigo-200 font-mono text-sm">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 text-gray-700">
+                            <div class="col-span-full font-sans text-base font-semibold text-indigo-700">Air Asia XJ613</div>
+
+                            <div><span class="text-gray-500 w-20 inline-block font-sans">Route:</span> KIX &rarr; DMK</div>
+                            <div><span class="text-gray-500 w-20 inline-block font-sans">Departure:</span> Dec.02, 2025 @ 09:55 JST</div>
+                            <div><span class="text-gray-500 w-20 inline-block font-sans">Arrival:</span> Dec.02, 2025 @ 14:25 BKK</div>
+                            
+                            <div class="col-span-full text-xs font-sans italic pt-2">เวลาบิน ประมาณ 6.5 ชั่วโมง ** ค่าทัวร์ไม่รวมอาหารบนเครื่องบิน</div></div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-lg font-bold kc-text-blue-300 mt-8 mb-4">Baggage Limits</h3>
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 text-base">
+                        <div class="p-4 rounded-xl bg-red-50 border border-red-300 w-full md:w-1/2">
+                            <p class="font-bold text-red-700 flex items-center mb-1 font-sans">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M3 17l6-3m5 3l6-3"></path></svg>
+                                Checked Baggage
+                            </p>
+                            <p class="font-mono text-gray-800 text-2xl font-bold">20 kg</p>
+                            <p class="text-xs text-gray-600 mt-1">In November, Osaka,Tokyo's temp. around 50-64°F (10-18°C). ช่วงกลางคืนอาจลงถึง 41°F (5°C). </p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-green-50 border border-green-300 w-full md:w-1/2">
+                            <p class="font-bold text-green-700 flex items-center mb-1 font-sans">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                                Carry-On Baggage
+                            </p>
+                            <p class="font-mono text-gray-800 text-2xl font-bold">7 kg</p>
+                            <p class="text-xs text-gray-600 mt-1">One small bag permitted. Keep essentials here for the first day.</p>
+                        </div>
+                    </div>
+                `
+            },
+            day1: {
+                title: "Day 1: Nov 28  ถึงสนามบินนาริตะ",
+                imageLabel: "Tokyoimages",
+                imageUrl: "https://kcpic.github.io/Osaka25/TokyoShinjuku.jpg",   // size 1024 * 128 pixels
+                location: { lat: 27.7172, lon: 85.3240 },
+                content: `
+                <p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>8:30 จากสนามบิน --> Tokyo</li>
+                        <li class="text-red-700 font-bold bg-red-100">เลี้ยงมื้อเที่ยง  Yakiniku  ปิ้งย่างสไตล์ญี่ปุ่น</li>
+                        <!-- User's request fixed: Changed 'block' to 'inline' to keep link on the same line -->
+                        <li>
+                            วัดพุทธ วัดอาซากุสะ (SENSOJI TEMPLE)<a href="https://maps.app.goo.gl/YLRFLRDyQvJG2LB87" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-วัดอาซากุสะ </a>
+                        </li>
+                        <li>ไหว้เจ้าแม่กวนอิม เตรียมเหรียญ 5 yen</a></li>
+                        <li>ประตูคามินาริมง โคมไฟสีแดงยักษ์</li>
+                        <li>ถนนนากามิเสะ <span class="text-sm">ขนม ไอศกรีม ของที่ระลึก</span></li>
+                        <li>อิสระ สวนสุมิดะ(Sumida Park)</br>
+                            <span class="text-sm">วิวแม่น้ำ และ Tokyo Skytree, ชมซากุระ</span> <a href="https://maps.app.goo.gl/xyxYm2AtrRxt43d69" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Sumida Park </a></li>
+
+                        <li>ช้อปย่านชินจูกุ (Shinjuku) <a href="https://maps.app.goo.gl/ZJFtdELToWB2QefYA" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Giant 3D cat Shinjuku</a></li>
+                        <li>ห้าง Isetan <a href="https://maps.app.goo.gl/XuMtvg7szJTcyYpv7" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Isetan</a></li>
+
+                        <li>SEIBU PePe Brick St, Alpen Sports <a href="https://maps.app.goo.gl/GNEN6tDezsbmGde17" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Pepe</a></li>
+                        <li><span class="text-sm">ร้าน 100เยน ตึก PEPE ชั้น8 ดองกี้ มัตสึโมโต้</span> </li>
+
+                        <li class="text-red-700">ไปจังหวัดยามานาชิ 2 ชม.</li>
+                        <li>Fuji Kawaguchiko Autumn Leaves Fest.</li>
+                        <li>คาวากูจิโกะ  โมมิจิ ไคโร(Momiji Kairo) อุโมงค์ใบเมเปิ้ล  <a href="https://maps.app.goo.gl/FawHvPYYKjQYoJwP8" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Kawaguchi Maple Corridor</a></li>
+
+                        <li class="text-blue-700">Option: หมู่บ้านโอชิโนะ ฮักไก (Oshino Hakkai Village) ริมทะเลสาบยามา นาคาโกะ</li>
+
+                        <li class="text-blue-700">(ต่อ)ศาลเจ้าเซ็นเก็น เจดีย์ห้าชั้น ชิมโมจิย่าง <a href="https://maps.app.goo.gl/pEpqDCzTB3zZZJYD7" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-ศาลเจ้าเซ็นเก็น </a></li>
+                        
+                        <li>เข้าที่พัก Fujisan Garden Hotel Onsen3*   <a href="https://maps.app.goo.gl/wbBxKksPR6y3rXqH9" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Fujisan Garden</a></li>
+                        <li class="text-red-700 font-bold bg-red-100">เลี้ยงมื้อเย็น ขาปูยักษ์ บุฟเฟ่ต์ </li>
+                    </ul>
+
+                    </p>
+                    <p class="mt-4 font-semibold text-green-600">Note:</p>
+                    <ul class="list-disc list-inside ml-4 text-sm">
+                        <li>Add your note here for record</li>
+                        <li>อาหารอร่อย วิวสวย อากาศดี เป็นต้น</li>
+                    </ul>
+                    <p class="mt-4 font-semibold text-indigo-600">Included: Fujisan Garden Hotel, Lunch and Dinner (L/D)</p>
+                `
+            },
+            day2: {
+                title: "Day 2: Nov 29 ชิซูโอกะ",
+                imageLabel: "ฟูจิ คาวากุจิโกะ",
+                imageUrl: "https://kcpic.github.io/Osaka25/kawa.jpg", // NEW URL
+                location: { lat: 27.6833, lon: 86.7333 },
+                content: `
+                <p class="text-sm">Still in Yamanachi, breakfast at the hotel then go shopping at nearby mall, eat lunch, then go to Shizuoka.</br>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li class="text-red-700 font-bold bg-red-100">เลี้ยงอาหารเช้า<span class="text-sm"> ณ โรงแรม (มื้อที่3)</span></li>
+                        <li>ช้อป Duty free<span class="text-sm"> โฟมหินภูเขาไฟ วิตามิน อาหารเสริม ครีมต่างๆ ขนมญี่ปุ่น ชาเขียว</span></li>
+                        <li>สวนโออิชิ ปาร์ค (Oishi Park) <a href="https://maps.app.goo.gl/ByyEGwWhGjVuBgf16" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Oishi Park </a></li>
+                        <li><span class="text-sm"> (ต่อ) วิวภูเขาไฟฟูจิ ทะเลสาบคาวากุจิโกะ</span></li>
+                        <li>ถ่ายภาพภูเขาไฟฟูจิและทุ่งดอกไม้ อุโมงค์เมเปิ้ล <a href="https://maps.app.goo.gl/ByyEGwWhGjVuBgf16" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Maple Corridor </a></li>
+                        <li>สวนแอปเปิ้ล (ให้เวลา 40 นาที) <span class="text-sm"> มีร้านอาหาร ตลาดขายผลไม้ ของที่ระลึก แยมผลไม้</span></li>
+                        <li class="text-blue-700 font-bold"><span class="text-sm">ค่าทัวร์ รวม ค่าเข้าชมและค่าเก็บผลไม้ - ไม่รวม workshop และอื่นๆ</span></li>
+                        <li class="text-red-700 font-bold bg-red-100">เลี้ยงอาหารเที่ยง (มื้อที่4)</li>
+                        <li class="text-red-700">ไปจังหวัดชิซูโอกะ(Shizuoka) <span class="text-sm"> 3 ชั่วโมง ไม่ไกลจากโตเกียว ใกล้ภูเขาไฟฟูจิ</span></li>
+                        <li>นั่งกระเช้านิฮอนไดระ(Nihondaira Ropeway) <a href="https://maps.app.goo.gl/VDBkMaNBNWgpKZfe8" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Nihondaira Ropeway </a></li>
+                        <li><span class="text-sm"> (ต่อ) ค่าทัวร์รวมค่ากระเช้าขึ้น-ลง ระยะ 1 กม ใช้เวลา 5 นาที</span></li>
+                        <li>ชมศาลเจ้าคุโนซังโทโชกุ(Kunozan Toshogu) <a href="https://maps.app.goo.gl/NYcnbRcrJoCfS3xZ6" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-KunozanToshogu </a></li>
+                        <li><span class="text-sm">สีสันสวยงาม เน้นสีแดงเป็นสีหลัก และตัดกับสีทอง สีเขียว สีน้ำเงิน วิวสวยงาม เห็นอ่าวซุรุกะและพื้นที่โดยรอบ (ไม่รวมค่าเข้าชม)</span></li>
+                        <li class="text-red-700">เดินทางสู่โรงแรมที่พัก (เดินทางประมาณ 2 ชั่วโมง)</li>
+                        <li>เข้าที่พัก: Sun Royal Hotel Hamanako Onsen 3*   --- mo map</li>
+                        <li class="text-red-700 font-bold bg-red-100">เลี้ยงมื้อเย็น (มื้อที่ 5)</li>
+                    </ul>
+                    </p>
+                        
+                    <p class="mt-4 font-semibold text-green-600">Note:</p>
+                    <ul class="list-disc list-inside ml-4 text-sm">
+                        <li>Add your note here for record</li>
+                        <li>อาหารอร่อย วิวสวย อากาศดี เป็นต้น</li>                       
+                    </ul>
+                <p class="mt-4 font-semibold text-indigo-600">Included: Sun Royal Hotel, All meals (B/L/D), ค่าเข้าสวนเก็บผลไม้, รถกระเช้า</p>
+                `
+            },
+            day3: {
+                title: "Day 3: Nov 30 Aichi",
+                imageLabel: "ภาพไอจิ ",
+                imageUrl: "https://kcpic.github.io/Osaka25/day3.jpg", // NEW URL
+                location: { lat: 27.8000, lon: 86.7167 },
+                content: `
+                    <p class="text-sm">เดินทางไป ไอจิ หลังทานมื้อเช้า รถวิ่งราว 1.5 ชม  อิสระมื้อเที่ยงและเย็น</br>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li class="text-red-700 font-bold bg-red-100">เลี้ยงอาหารเช้า ณ โรงแรม (มื้อที่6)</li>
+                        <li class="text-red-700">เดินทางสู่จังหวัดไอจิ(Aichi)<span class="text-sm"> (เดินทางประมาณ 1.5 ชั่วโมง)</span></li>
+                        <li>โครันเค (Korankei Gorge) ช่องเขาโครังเค <a href="https://maps.app.goo.gl/Rdo4coEaTCPbPAUh7" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Korankei Gorge </a></li>
+                        <li><span class="text-sm"> (ต่อ) ดอกเมเปิ้ล ญี่ปุ่น วิวแม่น้ำโทโมเอะ</span></li>
+                        <li><span class="text-sm"> (ต่อ) สะพานไทเกะซึเคียว (Taigetsukyo Bridge) ถ่ายรูปใบไม้เปลี่ยนสี</span></li>
+                        <li>ชิกิซากุระ ที่สวนโอบาระฟุเรไอ(Obara Fureai Park) <a href="https://maps.app.goo.gl/XNptTFtuPpJA7ZH98" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Obara Fureai Park</a></li>
+                        <li class="text-red-700">สู่เมืองนาโกย่า (Nagoya) (1 ชั่วโมง) เมืองท่าที่ใหญ่ที่สุด</li>
+                        <li>ช้อปถนนซากาเอะ(Sakae) brand name <a href="https://maps.app.goo.gl/sp7NBxreJvaCdKy86" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Sakae </a></li>
+                        <li class="text-sm text-blue-700">Option เที่ยวอิสระ โอเอซิส 21 (Oasis 21) สถาปัตยกรรมสมัยใหม่ <a href="https://maps.app.goo.gl/Qwdu327gJRH66rb2A" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Oasis 21 </a></li>
+                        <li class="text-sm text-blue-700"> ดาดฟ้าพื้นที่สีเขียวขนาดใหญ่ สวนน้ำวน (Waterfall Garden)</li>
+                        <li class="text-sm text-blue-700"> หอคอยโทรทัศน์นาโกย่า (Nagoya TV Tower)</li>
+                        <li class="text-red-700 font-bold bg-green-100">เที่ยง อิสระอาหารเที่ยง  ตามอัธยาศัย</li>
+                        <li class="text-red-700">สู่เมือง มิเอะ (Mie)(1 ชั่วโมง)</li>
+                        <li>ช้อปปิ้ง Mitsui outlet park jazz dream <a href="https://maps.app.goo.gl/U5XguKUbZc3XUSF39" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Mitsui OPJD Nagashima</a></li>
+                        <li><span class="text-sm">(ต่อ)กลางห้างยังมีพื้นที่สำหรับนั่งเล่น ห้องอาหาร</span></li>
+                        <li class="text-red-700 font-bold bg-green-100">อิสระอาหารเย็น  ตามอัธยาศัย</li>
+                        <li class="text-red-700">สู่จังหวัดกิฟุ (Gifu) (1 ชั่วโมง)</li>
+                        <li>เข้าที่พัก: Hotel Koyo 3*  No Map</li>
+                    </ul>                       
+                    </p>
+                    <p class="mt-4 font-semibold text-green-600">Note:</p>
+                    <ul class="list-disc list-inside ml-4 text-sm">
+                    <li>Add your note here for record</li>
+                        <li>อยากเอาโดรนมาถ่ายรูป</li>
+                        <li>อาหารอร่อย วิวสวย อากาศดี เป็นต้น</li>
+                    </ul>
+                    <p class="mt-4 font-semibold text-indigo-600">Included: Hotel Koyo 3*, breakfast only</p>
+                `
+            },
+            day4: {
+            title: "Day 4: Dec 1 Kyoto",
+            imageLabel: "Kyoto เกียวโต Kiyomizu temple",
+            imageUrl: "https://kcpic.github.io/Osaka25/day4.jpg", // NEW URL
+            location: { lat: 27.8000, lon: 86.7167 }, // Same coordinates as Namche
+            content: `
+                <p class="text-sm">จากโรงแรมที่ Gifu ทานมื้อเช้า ไปเกียวโต เลี้ยงมื้อเที่ยง อิสระมื้อเย็น</br>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li class="text-red-700 font-bold bg-red-100">เลี้ยงอาหารเช้า ณ โรงแรม (มื้อที่ 7)</li>
+                    <li class="text-red-700">เดินทางสู่เกียวโต (Kyoto) ~ 2.5 ชม.) อดีตเมืองหลวง</li>
+                    <li>เกอิชา บ้านเรือนไม้</li>
+                    <li>ไหว้พระ วัดคิโยมิสุเดระ (Kiyomizu temple) <a href="https://maps.app.goo.gl/gSeNHPKor7bqoopv8" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Kiyomizu-dera </a></li>
+                    <li><span class="text-sm">(ต่อ) วัดน้ำใส ภาษาญี่ปุ่นแปลว่า “น้ำบริสุทธิ ์” มรดกโลก</span></li>
+                    <li><span class="text-sm">(ต่อ)ขอพรจากเจ้าแม่กวนอิม ซึ่งเป็นพระประธานของวัด และเทพเอบิสึผู้เป็นเทพเจ้าแห่งความร่ำรวยมั่งคั่ง (ค่าทัวร์รวมค่าเข้าวัด)</span></li>
+                    <li>หรือ  วัดคินคะคุจิ (Kinkakuji) (GoldenPavilion) <a href="https://maps.app.goo.gl/2rnzQYuuTvWDETLU8" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Kinkaku-ji </a></li>
+                    <li><span class="text-sm">(ต่อ) อาคารสีทองมี 3 ชั้น ทำจากไม้ กำแพงสีขาว เห็นในรูปบ่อยๆ</span></li>
+                    <li><span class="text-sm">(ต่อ) ชมพระพุทธรูปและรูปปั้นของโชกุนอะชิคางะ โยชิมิทซึ </span>/li>
+                    <li class="text-red-700 font-bold bg-red-100">เลี้ยงอาหารเที่ยง (มื้อที่ 8)</li>
+                    <li class="text-red-700">เดินทางสู่เมืองโอซาก้า (Osaka) (~ 1 ชม.)</li>
+                    <li>ปราสาทโอซาก้า (Osaka Castle) <a href="https://maps.app.goo.gl/NxEdijdGKXdhPHkL7" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Osaka Castle </a></li>
+                    <li><span class="text-sm bg-red-100">ค่าทัวร์ไม่รวมค่าเข้าปราสาท</span> <span class="text-sm">ศตวรรษที่ 16.5 เป็นหนึ่งในสามปราสาทที่มีชื่อเสียงที่สุดในญี่ปุ่น</span></li>
+                    <li>ช้อปย่านชินไซบาชิ(Shinsaibashi) <a href="https://maps.app.goo.gl/8941LWnSW1JWjfVW9" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Shinsaibashi-Suji Shopping St.</a> </li>
+                    <li><span class="text-sm">(ต่อ) ย่านช้อปปิ้งระยะทางยาวกว่า 600 เมตร</span></li>
+                    <li>ที่นี่มี ป้ายไฟกูลิโกะ (Glico LED) <a href="https://maps.app.goo.gl/WReegxDoquUKgfKv6" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors bg-red-100 inline"> Map-Glico Sign</a></li>
+                    <li><span class="text-sm">(ต่อ) สร้างขึ้นมาปี ค.ศ. 1953 ตั้งอยู่บริเวณสะพานอิบิซึบาชิ (Ebisubashi Bridge)</span></li>
+                    <li>แวะชมสะพานเล็กๆที่เชื่อมต่อ ระหว่าง ย่านโดทงโบริ (Dotonbori) กับย่านชินไซบาชิ ย่านการค้ายอดนิยมของโอซาก้า</li>
+                    <li class="text-red-700">เดินทางเมือง อิซุมิซาโนะ(Izumisano) (~ 2 ชม.) ได้ชื่อว่าเป็น ประตูสู่คันไซ</li>
+                    <li class="text-red-700 font-bold bg-green-100">อิสระอาหารเย็น ตามอัธยาศัย</li>
+                    <li>อิสระท่องเที่ยวโดยรถแท็กซี ไป รินคู พรีเมี่ยม เอาท์เล็ท Rinku Premium Outlets</li>
+                    <li>หรือ กรณีที่ได้พัก N GATE HOTEL OSAKA อิสระเดินเล่นประมาณ 11 นาที เพื่อไปช้อปปิ้งที่ รินคู พรีเมี่ยม เอาท์เล็ท</li>
+                    <li>บรรยากาศท่าเรือตอนใต้ของ อเมริกา New Orleans?</li>
+                    <li>เข้าที่พัก: Izumisano Center Hotel / N GATE HOTEL 3*  </li>
+                    </ul>                       
+                    </p>
+                    <p class="mt-4 font-semibold text-green-600">Note:</p>
+                    <ul class="list-disc list-inside ml-4 text-sm">
+                        <li>Add your note here for record</li>
+                        <li>อาหารอร่อย วิวสวย อากาศดี เป็นต้น</li>
+                    </ul>
+                    ที่พัก: Izumisano Center Hotel / N GATE HOTEL 3*  หรือระดับและเมืองใกล้เคียงกัน 
+                    <p class="mt-4 font-semibold text-indigo-600">Included: Hotel, breakfast and Lunch, ค่าเข้าวัดคิโยมิสุเดระ</p>
+                `
+                },
+            day5: {
+                title: "Day 5: Dec 2  สนามบินคันไซบินกลับไทย",
+                imageLabel: "KIX - DMK flight",
+                imageUrl: "https://kcpic.github.io/Osaka25/day5long.png", // NEW URL
+                location: { lat: 27.8596, lon: 86.7645 },
+                content: `
+                <p class="text-sm">จากโรงแรมที่ ท่าอากาศยานนานาชาติคันไซ - ท่าอากาศยานนานาชาติดอนเมือง</br>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li class="text-red-700 font-bold bg-red-100">เลี้ยงอาหารเช้า ณ โรงแรม (มื้อที่ 9)</li>
+                    <li class="text-red-700">เดินทางไปสนามบินคันไซ </li>
+                    <li>Flight  Air Asia XJ613  ค่าทัวร์ไม่รวมอาหารบนเครื่องบิน</li>
+                    <li>Departure  9:55  Arrival Time  14:25  about 6.5 hours</li>
+                    <li>เข้าที่พัก: บ้านเราแสนสุขใจ 🎶 </li>
+                </ul>                       
+                </p>
+                <p class="mt-4 font-semibold text-green-600">Note:</p>
+                <ul class="list-disc list-inside ml-4 text-sm">
+                    <li>Add your note here for record</li>
+                    <li>อาหารอร่อย วิวสวย อากาศดี เป็นต้น</li>
+                </ul>
+                `
+            }
+        };
+
+        // --- JavaScript Logic ---
+        
+        /**
+         * Finds all navigation items and attaches a click listener.
+         * Initializes the content panel with the first item (Contact).
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            const navItems = document.querySelectorAll('.nav-item');
+            const initialKey = navItems.length > 0 ? navItems[0].getAttribute('data-key') : null;
+
+            navItems.forEach(item => {
+                item.addEventListener('click', (event) => {
+                    const key = event.currentTarget.getAttribute('data-key');
+                    showContent(key);
+                });
+            });
+
+            // Display the initial content (Contact)
+            if (initialKey) {
+                showContent(initialKey);
+            } else {
+                document.getElementById('content-title').textContent = "Welcome to your Trip Planner";
+                document.getElementById('content-body').innerHTML = "<p>No trip data found. Please check the itinerary.</p>";
+            }
+        });
+
+        /**
+         * Updates the main content panel based on the provided key.
+         * @param {string} key - The key corresponding to an item in tripData.
+         */
+        function showContent(key) {
+            const data = tripData[key];
+            const contentTitle = document.getElementById('content-title');
+            const contentBody = document.getElementById('content-body');
+            
+            if (!data) {
+                contentTitle.textContent = "Error";
+                contentBody.innerHTML = `<p class="text-red-500">Content for key "${key}" not found.</p>`;
+                return;
+            }
+            
+            let renderedContent = '';
+
+            // --- Dynamic Content Generation for Itinerary Days (Image Only) ---
+            // The height class has been changed from h-64 to h-32 as requested.
+            if (data.location && data.title.startsWith('Day')) {
+                // 1. Build Image Section with Fallback for Loading Errors
+                // object-contain is used here to ensure the whole image is visible, regardless of screen size/orientation.
+                renderedContent += `
+                    <div class="rounded-xl overflow-hidden mb-8 shadow-lg bg-gray-100 h-32 flex items-center justify-center">
+                        <img 
+                            src="${data.imageUrl}" 
+                            alt="${data.imageLabel || data.title}"
+                            class="w-full h-full object-contain"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x400/374151/ffffff?text=Image+Unavailable'; this.style.opacity = '0.5';"
+                        />
+                    </div>
+                `;
+            }
+
+            // Append original content (or the contact/highlight/flight content)
+            renderedContent += data.content;
+
+            // Update content
+            contentTitle.textContent = data.title;
+            contentBody.innerHTML = renderedContent;
+
+            // Update active state in navigation
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                // Remove active classes from all items
+                item.classList.remove('bg-indigo-50', 'text-indigo-700', 'font-extrabold', 'border-b-2', 'border-indigo-600');
+                item.classList.add('text-indigo-800'); // Ensure default color is the stand-out indigo
+
+                // Apply active classes to the clicked item for the horizontal bar
+                if (item.getAttribute('data-key') === key) {
+                    // Active state uses bolder font and indigo text/border, and light indigo background
+                    item.classList.add('bg-indigo-50', 'text-indigo-700', 'font-extrabold', 'border-b-2', 'border-indigo-600');
+                    item.classList.remove('text-indigo-800', 'hover:bg-indigo-100');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
