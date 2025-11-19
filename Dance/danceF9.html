@@ -47,7 +47,7 @@
         const URL_DATA = {
             'ครูแหม่ม': [
                 { title: 'Electric Slide', url: 'https://youtu.be/9-bk5fzm_vY?list=RD9-bk5fzm_vY', description: 'Electric Slide Tutorial & Song', image: '' },
-                { title: 'BARTENDER STOMP', url: 'https://youtu.be/3fH1_G2t8tU?t=111', description: 'Tutorial & song', image: '' },
+                { title: 'BARTENDER STOMP', url: 'https://youtu.be/3fH1_G2t8tU?t=111', description: 'Tutorial & song', image: 'Testkhumam.jpg' },
                 { title: 'COWBOY MADISON', url: 'https://youtu.be/J8qNabIgN1I?t=92', description: 'Tutorial & song', image: '' },
                 { title: 'COWBOY BOOGIE Set', url: 'https://youtu.be/ro17Hzz4NRI', description: 'Dance with music', image: '' },
                 { title: 'Lets Twist Again', url: 'https://youtu.be/OvlsQprZPOQ?t=102', description: 'Tutorial & song', image: '' },
@@ -183,15 +183,16 @@
                         <!-- Right-aligned Image (50x50)  with onerror fallback -->
                         <div class="flex-shrink-0">
                             <img 
-                                <!-- src="https://placehold.co/50x50/A0A0FF/000?text=Rsrc"  -->
-                                src="Testkhumam.jpg" 
+                                src="${imgSrc}"
                                 alt="Resource thumbnail" 
                                 class="w-[50px] h-[50px] rounded-lg object-cover"
+                                onerror="this.onerror=null; this.src='${FALLBACK_IMAGE_URL}'"
                             >
                         </div>
                     </div>
                 </div>
-            `}).join('');
+                `
+            }).join('');
 
             contentPanel.innerHTML = `
                 <h2 class="text-3xl font-extrabold text-gray-800 mb-6">Resources: ${categoryKey}</h2>
@@ -300,4 +301,3 @@
 
 </body>
 </html>
->
