@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura 2026 | Osaka & Kyoto Guide</title>
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23ff6800%22></rect><path fill=%22%23fff%22 d=%22M59.59 47.63L85.25 79.92Q85.63 80.50 85.63 81.25Q85.63 82.02 85.01 82.63Q84.39 83.25 83.54 83.25L83.54 83.25L59.02 83.25Q56.84 83.25 55.60 81.73L55.60 81.73L39.07 61.30L39.07 80.69Q39.07 81.73 38.31 82.49Q37.55 83.25 36.51 83.25L36.51 83.25L16.94 83.25Q15.89 83.25 15.13 82.49Q14.38 81.73 14.38 80.69L14.38 80.69L14.38 19.31Q14.38 18.27 15.13 17.51Q15.89 16.75 16.94 16.75L16.94 16.75L36.51 16.75Q37.55 16.75 38.31 17.51Q39.07 18.27 39.07 19.31L39.07 19.31L39.07 37.17L54.09 18.36Q55.51 16.75 57.60 16.75L57.60 16.75L80.50 16.75Q81.35 16.75 81.97 17.37Q82.59 17.98 82.59 18.79Q82.59 19.60 82.11 20.17L82.11 20.17L59.59 47.63Z%22></path></svg>" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; padding-top: 120px; }
+        .map-container iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 0.75rem;
+        }
+        .thumbnail {
+            width: 180px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        .thumbnail:hover { transform: scale(1.05); }
+        
+        /* Dropdown Logic */
+        .group:hover .dropdown-menu {
+            display: block;
+        }
+        
+        section { 
+            scroll-margin-top: 140px; 
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-gray-900">
+
+    <!-- Fixed Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-rose-100 shadow-sm">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0">
+                <h1 class="text-2xl font-extrabold text-rose-600 italic tracking-tighter">SAKURA 2026</h1>
+                <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">March 29 — April 9</p>
+            </div>
+
+            <!-- Horizontal Menu -->
+            <nav class="flex space-x-8">
+                <!-- Osaka Dropdown -->
+                <div class="relative group py-2">
+                    <button class="font-semibold text-gray-700 hover:text-rose-600 flex items-center transition-colors">
+                        Osaka
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-menu hidden absolute left-0 mt-0 w-56 bg-white border border-rose-50 shadow-xl rounded-lg overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                        <a href="#osaka-castle" class="block px-4 py-3 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-700 border-b border-gray-50">1. Osaka Castle Park</a>
+                        <a href="#mint-museum" class="block px-4 py-3 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-700 border-b border-gray-50">2. Japan Mint</a>
+                        <a href="#dotonbori" class="block px-4 py-3 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-700">3. Dotonbori</a>
+                    </div>
+                </div>
+
+                <!-- Kyoto Dropdown -->
+                <div class="relative group py-2">
+                    <button class="font-semibold text-gray-700 hover:text-rose-600 flex items-center transition-colors">
+                        Kyoto
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-menu hidden absolute left-0 mt-0 w-64 bg-white border border-rose-50 shadow-xl rounded-lg overflow-hidden">
+                        <a href="#philosophers-path" class="block px-4 py-3 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-700 border-b border-gray-50">4. Philosopher's Path</a>
+                        <a href="#kiyomizu" class="block px-4 py-3 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-700 border-b border-gray-50">5. Kiyomizu-dera</a>
+                        <a href="#arashiyama" class="block px-4 py-3 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-700 border-b border-gray-50">6. Arashiyama</a>
+                        <a href="#keage" class="block px-4 py-3 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-700">7. Keage Incline</a>
+                    </div>
+                </div>
+
+                <!-- Others Dropdown -->
+                <div class="relative group py-2">
+                    <button class="font-semibold text-gray-700 hover:text-rose-600 flex items-center transition-colors">
+                        Others
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-menu hidden absolute right-0 mt-0 w-48 bg-white border border-rose-50 shadow-xl rounded-lg overflow-hidden">
+                        <a href="#nara-park" class="block px-4 py-3 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-700 border-b border-gray-50">8. Nara Park</a>
+                        <span class="block px-4 py-3 text-xs text-gray-400 italic">More coming soon...</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-8">
+
+        <!-- OSAKA SECTION -->
+        <div class="mb-12 border-l-4 border-rose-400 pl-6">
+            <h2 class="text-3xl font-black text-rose-900 uppercase tracking-tight">Osaka Highlights</h2>
+        </div>
+
+        <!-- 1. Osaka Castle -->
+        <section id="osaka-castle" class="mb-24">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="bg-rose-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center text-sm mr-3">1</span>
+                Osaka Castle Park
+            </h3>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">The massive park surrounding the castle tower comes alive with over 3,000 cherry trees. The Nishinomaru Garden is the primary viewing spot for evening light-ups.</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                <img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?w=300&h=400&fit=crop" alt="Osaka Castle" class="thumbnail shadow-lg">
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=300&h=400&fit=crop" alt="Sakura" class="thumbnail shadow-lg">
+            </div>
+            <div class="map-container shadow-inner border border-rose-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.93!2d135.523!3d34.687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e0d05e4b2957%3A0x6758784d53df6718!2sOsaka%20Castle!5e0!3m2!1sen!2sjp!4v1710000000000" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- 2. Japan Mint -->
+        <section id="mint-museum" class="mb-24">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="bg-rose-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center text-sm mr-3">2</span>
+                Japan Mint (Sakura Passage)
+            </h3>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">Known for rare, late-blooming double-petal cherry trees. This passage is only open for one week in mid-April, perfect for the end of your trip.</p>
+            <div class="map-container shadow-inner border border-rose-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.8!2d135.52!3d34.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e0d691244e8d%3A0x446e9196d9d9f58c!2sJapan%20Mint!5e0!3m2!1sen!2sjp!4v1710000000025" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- 3. Dotonbori -->
+        <section id="dotonbori" class="mb-24">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="bg-rose-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center text-sm mr-3">3</span>
+                Dotonbori
+            </h3>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">While not a primary sakura spot, it's the cultural heart of Osaka's food scene. Visit after a day of viewing for Takoyaki and Okonomiyaki.</p>
+            <div class="map-container shadow-inner border border-rose-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.38!2d135.50!3d34.66!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e7136018318b%3A0x5291b8f526017006!2sDotonbori!5e0!3m2!1sen!2sjp!4v1710000000010" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- KYOTO SECTION -->
+        <div class="mb-12 border-l-4 border-rose-400 pl-6 mt-32">
+            <h2 class="text-3xl font-black text-rose-900 uppercase tracking-tight">Kyoto Highlights</h2>
+        </div>
+
+        <!-- 4. Philosopher's Path -->
+        <section id="philosophers-path" class="mb-24">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="bg-rose-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center text-sm mr-3">4</span>
+                The Philosopher's Path
+            </h3>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">A stone path following a canal lined with hundreds of cherry trees, connecting Ginkaku-ji to the Nanzen-ji area.</p>
+            <div class="map-container shadow-inner border border-rose-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.55!2d135.794!3d35.027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001091ca2e0a293%3A0x67340263f357f6b!2sPhilosopher's%20Walk!5e0!3m2!1sen!2sjp!4v1710000000001" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- 5. Kiyomizu-dera -->
+        <section id="kiyomizu" class="mb-24">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="bg-rose-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center text-sm mr-3">5</span>
+                Kiyomizu-dera Temple
+            </h3>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">An iconic Buddhist temple with a massive wooden stage that offers breathtaking views of the city framed by spring blossoms.</p>
+            <div class="map-container shadow-inner border border-rose-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.4!2d135.78!3d34.99!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108d488587be1%3A0xdb65f7c32b508d!2sKiyomizu-dera!5e0!3m2!1sen!2sjp!4v1710000000004" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- 6. Arashiyama -->
+        <section id="arashiyama" class="mb-24">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="bg-rose-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center text-sm mr-3">6</span>
+                Arashiyama & Togetsukyo Bridge
+            </h3>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">The forested mountainside turns pink in late March. Walking across the bridge is a quintessential Kyoto spring experience.</p>
+            <div class="map-container shadow-inner border border-rose-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.9!2d135.67!3d35.01!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001aa010842e47d%3A0x633190b06b2089b2!2sArashiyama%20Bamboo%20Forest!5e0!3m2!1sen!2sjp!4v1710000000006" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- 7. Keage Incline -->
+        <section id="keage" class="mb-24">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="bg-rose-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center text-sm mr-3">7</span>
+                Keage Incline
+            </h3>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">A former railway track that is now a walking path lined with cherry trees. One of the most unique photo spots in Kyoto.</p>
+            <div class="map-container shadow-inner border border-rose-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.3!2d135.78!3d35.00!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108fe7172b83b%3A0x93707e77a11002e8!2sKeage%20Incline!5e0!3m2!1sen!2sjp!4v1710000000008" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- OTHERS SECTION -->
+        <div class="mb-12 border-l-4 border-rose-400 pl-6 mt-32">
+            <h2 class="text-3xl font-black text-rose-900 uppercase tracking-tight">Others</h2>
+        </div>
+
+        <!-- 8. Nara Park -->
+        <section id="nara-park" class="mb-24">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="bg-rose-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center text-sm mr-3">8</span>
+                Nara Park
+            </h3>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">Located an hour from both cities, Nara Park offers a unique mix of ancient temples, free-roaming deer, and massive cherry blossom trees.</p>
+            <div class="map-container shadow-inner border border-rose-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.4!2d135.84!3d34.68!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60013994d5885f81%3A0x959714856f6629!2sNara%20Park!5e0!3m2!1sen!2sjp!4v1710000000013" loading="lazy"></iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-900 text-white py-16 text-center">
+        <p class="text-rose-400 font-bold mb-2">SPRING 2026</p>
+        <p class="text-gray-400 text-sm italic">Travel responsibly and respect local nature.</p>
+    </footer>
+
+</body>
+</html>
